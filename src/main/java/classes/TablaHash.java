@@ -8,6 +8,6 @@ package classes;
  *
  * @author carre
  */
-public class Node {
+public class TablaHash {
     
 }
