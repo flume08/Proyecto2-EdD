@@ -12,6 +12,12 @@ public class NodoTree<T> {
     private T element;
     private Nodo <T> leftSon;
     private Nodo <T> rightSon;
+    
+    public NodoTree(T element){
+        this.element = element;
+        this.leftSon = null;
+        this.rightSon = null;
+    }
 
     public T getElement() {
         return element;
