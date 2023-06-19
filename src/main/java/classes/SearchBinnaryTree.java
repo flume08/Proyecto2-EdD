@@ -35,4 +35,17 @@ public class SearchBinnaryTree<T> {
             }
         }
     }
+    public void insert(NodoTree<T> root,T element){
+        NodoTree<T> nodoNew = new NodoTree(element);
+        if(root == null){
+            root = nodoNew;
+        }else{
+            if((int) root.getElement() > (int) element){
+                insert(root.getLeftSon(),element);
+            }
+            else{
+                insert(root.getRightSon(),element);
+            }
+        }
+    }
 }
