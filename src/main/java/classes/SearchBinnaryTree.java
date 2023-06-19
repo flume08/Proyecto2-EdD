@@ -11,5 +11,11 @@ package classes;
  */
 public class SearchBinnaryTree<T> {
     private NodoTree<T> root;
+    public SearchBinnaryTree(){
+        this.root = null;
+    }
+    public NodoTree<T> getRoot() {
+        return root;
+    }
     
 }
