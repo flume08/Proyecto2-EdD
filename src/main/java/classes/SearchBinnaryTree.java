@@ -48,4 +48,42 @@ public class SearchBinnaryTree<T> {
             }
         }
     }
+    public NodoTree searchMinimun(NodoTree<T> nodo){
+        if (nodo == null) {
+        return null;
+    } else if (nodo.getLeftSon() == null) {
+        return nodo;
+    } else {
+        return searchMinimun(nodo.getLeftSon());
+    }
+    }
+    public void delete(NodoTree<T> root, T element){
+        NodoTree<T> aux;
+        if(root == null){
+            System.out.println("El elemento no existe");
+        }
+        else{
+            if((int) element < (int)root.getElement()){
+                delete(root.getLeftSon(), element);
+            }else{
+                if((int) element > (int)root.getElement()){
+                    delete(root.getRightSon(), element);
+                }else{
+                    if(root.getLeftSon()==null){
+                        aux = root;
+                        root = root.getRightSon();
+                    }else{
+                        if(root.getRightSon()==null){
+                            aux = root;
+                            root = root.getLeftSon();
+                        }else{
+                            aux = searchMinimun(root.getRightSon());
+                            root.setElement(aux.getElement());
+                            delete(root.getRightSon(),root.getElement());
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
