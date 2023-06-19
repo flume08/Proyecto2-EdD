@@ -8,8 +8,7 @@ package classes;
  *
  * @author carre
  */
-public class Lista {
-    public class List<T> { 
+public class Lista<T> { 
     private Nodo first; 
     private Nodo last; 
     private int size; 
@@ -17,7 +16,7 @@ public class Lista {
      * Constructor de la clase List.
      * Inicializa una lista vacía.
      */
-    public List(){ 
+    public Lista(){ 
             this.first = null; 
             this.last = null; 
             this.size = 0; 
@@ -267,6 +266,4 @@ public class Lista {
         i++;
         }
     }
-    
-    
-}
+}   
