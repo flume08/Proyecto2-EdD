@@ -8,38 +8,38 @@ package classes;
  *
  * @author carre
  */
-public class NodoTree<T> {
-    private T element;
-    private NodoTree <T> leftSon;
-    private NodoTree <T> rightSon;
+public class NodoTree {
+    private int element;
+    private NodoTree  leftSon;
+    private NodoTree  rightSon;
     
-    public NodoTree(T element){
+    public NodoTree(int element){
         this.element = element;
         this.leftSon = null;
         this.rightSon = null;
     }
 
-    public T getElement() {
+    public int getElement() {
         return element;
     }
 
-    public void setElement(T element) {
+    public void setElement(int element) {
         this.element = element;
     }
 
-    public NodoTree<T> getLeftSon() {
+    public NodoTree getLeftSon() {
         return leftSon;
     }
 
-    public void setLeftSon(NodoTree<T> leftSon) {
+    public void setLeftSon(NodoTree leftSon) {
         this.leftSon = leftSon;
     }
 
-    public NodoTree<T> getRightSon() {
+    public NodoTree getRightSon() {
         return rightSon;
     }
 
-    public void setRightSon(NodoTree<T> rightSon) {
+    public void setRightSon(NodoTree rightSon) {
         this.rightSon = rightSon;
     }
     

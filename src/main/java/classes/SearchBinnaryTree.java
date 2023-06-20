@@ -9,24 +9,24 @@ package classes;
  * @author carre
  * @param <T>
  */
-public class SearchBinnaryTree<T> {
-    private NodoTree<T> root;
+public class SearchBinnaryTree {
+    private NodoTree root;
     public SearchBinnaryTree(){
         this.root = null;
     }
-    public NodoTree<T> getRoot() {
+    public NodoTree getRoot() {
         return root;
     }
-    public NodoTree search(NodoTree root,T element){
+    public NodoTree search(NodoTree root,int element){
         if(root == null){
             return null;
         }
         else{
-            if(root.getElement() == element){
+            if((int)root.getElement() == element){
                 return root;
             }
             else{
-                if((int)root.getElement() > (int) element){
+                if(root.getElement() > element){
                     search(root.getLeftSon(),element);
                 }
                 else{
@@ -36,12 +36,12 @@ public class SearchBinnaryTree<T> {
         }
         return null;
     } 
-    public void insert(NodoTree<T> root,T element){
-        NodoTree<T> nodoNew = new NodoTree(element);
+    public void insert(NodoTree root,int element){
+        NodoTree nodoNew = new NodoTree(element);
         if(root == null){
             root = nodoNew;
         }else{
-            if((int) root.getElement() > (int) element){
+            if((int) root.getElement() >  element){
                 insert(root.getLeftSon(),element);
             }
             else{
@@ -49,7 +49,7 @@ public class SearchBinnaryTree<T> {
             }
         }
     }
-    public NodoTree searchMinimun(NodoTree<T> nodo){
+    public NodoTree searchMinimun(NodoTree nodo){
         if (nodo == null) {
         return null;
     } else if (nodo.getLeftSon() == null) {
@@ -58,16 +58,16 @@ public class SearchBinnaryTree<T> {
         return searchMinimun(nodo.getLeftSon());
     }
     }
-    public void delete(NodoTree<T> root, T element){
-        NodoTree<T> aux;
+    public void delete(NodoTree root, int element){
+        NodoTree aux;
         if(root == null){
             System.out.println("El elemento no existe");
         }
         else{
-            if((int) element < (int)root.getElement()){
+            if( element < root.getElement()){
                 delete(root.getLeftSon(), element);
             }else{
-                if((int) element > (int)root.getElement()){
+                if( element > root.getElement()){
                     delete(root.getRightSon(), element);
                 }else{
                     if(root.getLeftSon()==null){
