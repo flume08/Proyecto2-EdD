@@ -34,7 +34,8 @@ public class SearchBinnaryTree<T> {
                 }
             }
         }
-    }
+        return null;
+    } 
     public void insert(NodoTree<T> root,T element){
         NodoTree<T> nodoNew = new NodoTree(element);
         if(root == null){

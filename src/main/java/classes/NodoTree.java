@@ -10,8 +10,8 @@ package classes;
  */
 public class NodoTree<T> {
     private T element;
-    private Nodo <T> leftSon;
-    private Nodo <T> rightSon;
+    private NodoTree <T> leftSon;
+    private NodoTree <T> rightSon;
     
     public NodoTree(T element){
         this.element = element;
@@ -27,19 +27,19 @@ public class NodoTree<T> {
         this.element = element;
     }
 
-    public Nodo<T> getLeftSon() {
+    public NodoTree<T> getLeftSon() {
         return leftSon;
     }
 
-    public void setLeftSon(Nodo<T> leftSon) {
+    public void setLeftSon(NodoTree<T> leftSon) {
         this.leftSon = leftSon;
     }
 
-    public Nodo<T> getRightSon() {
+    public NodoTree<T> getRightSon() {
         return rightSon;
     }
 
-    public void setRightSon(Nodo<T> rightSon) {
+    public void setRightSon(NodoTree<T> rightSon) {
         this.rightSon = rightSon;
     }
     
