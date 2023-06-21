@@ -9,5 +9,20 @@ package classes;
  * @author carre
  */
 public class TablaHash {
+    private int capacity;
+    private Lista<Object>[] table;
+    private int size;
     
+    public TablaHash(int capacity){
+        this.capacity = capacity;
+        this.table = new Lista[capacity];
+    }
+    private int hashFunction(Object key) {
+        int hashCode = key.hashCode();
+        return Math.abs(hashCode) % table.length;
+}
+    public void addElement(Object element){
+        int index = hashFunction(element);
+        table[index].addAtTheEndT(element);
+    }
 }
