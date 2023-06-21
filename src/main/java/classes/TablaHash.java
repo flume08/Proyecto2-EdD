@@ -8,9 +8,9 @@ package classes;
  *
  * @author carre
  */
-public class TablaHash {
+public class TablaHash<T> {
     private int capacity;
-    private Lista<Object>[] table;
+    private Lista<T>[] table;
     private int size;
     
     public TablaHash(int capacity){
@@ -21,15 +21,15 @@ public class TablaHash {
         int hashCode = key.hashCode();
         return Math.abs(hashCode) % table.length;
 }
-    public void addElement(Object element){
+    public void addElement(T element){
         int index = hashFunction(element);
         table[index].addAtTheEndT(element);
     }
-    public boolean findElement(Object element){
+    public boolean findElement(T element){
         int index = hashFunction(element);
         return table[index].findElement(element);
     }
-    public boolean deleteElement(Object element){
+    public boolean deleteElement(T element){
         int index = hashFunction(element);
         return table[index].deleteIntN(element);
     }
