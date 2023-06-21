@@ -25,4 +25,12 @@ public class TablaHash {
         int index = hashFunction(element);
         table[index].addAtTheEndT(element);
     }
+    public boolean findElement(Object element){
+        int index = hashFunction(element);
+        return table[index].findElement(element);
+    }
+    public boolean deleteElement(Object element){
+        int index = hashFunction(element);
+        return table[index].deleteIntN(element);
+    }
 }
