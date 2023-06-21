@@ -255,15 +255,25 @@ public class Lista<T> {
      * Elimina todas las ocurrencias de un elemento en la lista.
      * @param x El elemento a eliminar.
      */
-    public void deleteIntN(T x){
+    public boolean deleteIntN(T x){
         int i = 0;
         while(i<this.size){
         if (x == this.accessElement(i))
             {
             this.deleteIndex(i);
             i--;
+            return true;
             }
         i++;
         }
+        return false;
     }
+    public boolean findElement(T element){
+        for(int i = 0; i<this.size; i++){
+           if(this.accessElement(i)==element){
+               return true;
+           } 
+        }
+        return false;
+    } 
 }   
