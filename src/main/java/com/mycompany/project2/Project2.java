@@ -5,6 +5,7 @@
 package com.mycompany.project2;
 
 import classes.FileManager;
+import GUI.Principal;
 
 /**
  *
@@ -17,7 +18,9 @@ public class Project2 {
         String habitacionesPath = "database\\Habitaciones.csv";
         String historicoPath = "database\\Historico.csv";
         String reservasPath = "database\\Reservas.csv";
-        
         FileManager fileManager = new FileManager();
         fileManager.readCSV(estadoPath);
+        Principal gui = new Principal();
+        gui.setVisible(true);
+
 }}
