@@ -57,4 +57,27 @@ public class GuiLogic {
             }
         }
     }
-}}
+    }
+  public boolean binarySearch(Lista<User> list, int id){
+        int l = 0, r = list.getSize() - 1;
+        while (l <= r) {
+            int m = l + (r - l) / 2;
+ 
+            // Check if x is present at mid
+            if (list.accessElement(m).getDni() == id)
+                return true;
+ 
+            // If x greater, ignore left half
+            if (list.accessElement(m).getDni() < id)
+                l = m + 1;
+ 
+            // If x is smaller, ignore right half
+            else
+                r = m - 1;
+        }
+ 
+        // If we reach here, then element was
+        // not present
+        return false;
+  }
+}

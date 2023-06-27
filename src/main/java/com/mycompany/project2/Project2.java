@@ -9,6 +9,7 @@ import GUI.Principal;
 import classes.Lista;
 import classes.User;
 import classes.Room;
+import classes.GuiLogic;
 
 /**
  *
@@ -23,7 +24,10 @@ public class Project2 {
         
         System.out.println(reservationsUsers.accessElement(0).getDni());
         System.out.println(rooms[149].getId());
-        
+        GuiLogic logic = new GuiLogic();
+        logic.bubbleSort(reservationsUsers);
+        System.out.println("---");
+        System.out.println(logic.binarySearch(reservationsUsers, 130000));
         Principal gui = new Principal();
         gui.setVisible(false);
     }
