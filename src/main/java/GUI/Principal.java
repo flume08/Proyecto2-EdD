@@ -33,10 +33,6 @@ public class Principal extends javax.swing.JFrame {
         background = new javax.swing.JPanel();
         cosmeticItem = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        welcomingText = new javax.swing.JTextArea();
-        importFileButton = new javax.swing.JButton();
-        continueWithoutImportingButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -65,61 +61,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI Black", 0, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Welcome to the Hotel Admin Software");
-        background.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 840, 50));
-
-        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
-
-        welcomingText.setBackground(new java.awt.Color(204, 204, 204));
-        welcomingText.setColumns(20);
-        welcomingText.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        welcomingText.setForeground(new java.awt.Color(0, 0, 0));
-        welcomingText.setRows(5);
-        welcomingText.setText("  To start, you have the posibility of choosing a csv\n\n  You can as well just work with the data that is already in the program!");
-        welcomingText.setBorder(new javax.swing.border.MatteBorder(null));
-        welcomingText.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jScrollPane1.setViewportView(welcomingText);
-
-        background.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 640, 140));
-
-        importFileButton.setBackground(new java.awt.Color(204, 204, 204));
-        importFileButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        importFileButton.setForeground(new java.awt.Color(0, 0, 0));
-        importFileButton.setText("Import File");
-        importFileButton.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        importFileButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        importFileButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                importFileButtonMouseClicked(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                importFileButtonMousePressed(evt);
-            }
-        });
-        importFileButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                importFileButtonActionPerformed(evt);
-            }
-        });
-        background.add(importFileButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 400, 170, 50));
-
-        continueWithoutImportingButton.setBackground(new java.awt.Color(204, 204, 204));
-        continueWithoutImportingButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        continueWithoutImportingButton.setForeground(new java.awt.Color(0, 0, 0));
-        continueWithoutImportingButton.setText("Use current data");
-        continueWithoutImportingButton.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        continueWithoutImportingButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        continueWithoutImportingButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                continueWithoutImportingButtonMouseClicked(evt);
-            }
-        });
-        continueWithoutImportingButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                continueWithoutImportingButtonActionPerformed(evt);
-            }
-        });
-        background.add(continueWithoutImportingButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 400, 170, 50));
+        background.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 840, 50));
 
         jPanel.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 590));
 
@@ -136,26 +78,6 @@ public class Principal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void importFileButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_importFileButtonMouseClicked
-
-    }//GEN-LAST:event_importFileButtonMouseClicked
-
-    private void importFileButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_importFileButtonMousePressed
-
-    }//GEN-LAST:event_importFileButtonMousePressed
-
-    private void importFileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_importFileButtonActionPerformed
-        
-    }//GEN-LAST:event_importFileButtonActionPerformed
-
-    private void continueWithoutImportingButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_continueWithoutImportingButtonMouseClicked
-
-    }//GEN-LAST:event_continueWithoutImportingButtonMouseClicked
-
-    private void continueWithoutImportingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_continueWithoutImportingButtonActionPerformed
-
-    }//GEN-LAST:event_continueWithoutImportingButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -193,13 +115,9 @@ public class Principal extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background;
-    private javax.swing.JButton continueWithoutImportingButton;
     private javax.swing.JPanel cosmeticItem;
-    private javax.swing.JButton importFileButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea welcomingText;
     // End of variables declaration//GEN-END:variables
 }

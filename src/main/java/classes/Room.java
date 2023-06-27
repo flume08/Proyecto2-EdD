@@ -15,6 +15,8 @@ public class Room {
     private String level;
     private String arrive;
     private String leave;
+    private boolean state;
+    private Lista<User> history;
 
     public Room(String id, String type, String level, String arrive, String leave) {
         this.id = id;
