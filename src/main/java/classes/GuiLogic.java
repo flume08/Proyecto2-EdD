@@ -9,12 +9,12 @@ package classes;
  * @author carre
  */
 public class GuiLogic {
-    public SearchBinnaryTree Rooms(Room[] rooms){
-        SearchBinnaryTree arbolito = new SearchBinnaryTree();
-        arbolito.insert(null, rooms[149]);
+    public ABB Rooms1(Room[] rooms){
+        ABB arbolito = new ABB();
+        arbolito.insert(rooms[149]);
         for(int i=0;i<150;i++){
-            arbolito.insert(arbolito.getRoot(), rooms[149-i]);
-            arbolito.insert(arbolito.getRoot(), rooms[149+i]);
+            arbolito.insert(rooms[149-i]);
+            arbolito.insert(rooms[149+i]);
         }
         return arbolito;
     }

@@ -6,6 +6,7 @@ package com.mycompany.project2;
 
 import classes.FileManager;
 import GUI.Principal;
+import classes.ABB;
 import classes.Lista;
 import classes.User;
 import classes.Room;
@@ -25,9 +26,8 @@ public class Project2 {
         System.out.println(reservationsUsers.accessElement(0).getDni());
         System.out.println(rooms[149].getId());
         GuiLogic logic = new GuiLogic();
-        logic.bubbleSort(reservationsUsers);
-        System.out.println("---");
-        System.out.println(logic.binarySearch(reservationsUsers, 130000));
+        ABB arbolito = logic.Rooms1(rooms);
+        arbolito.printInOrder();
         Principal gui = new Principal();
         gui.setVisible(false);
     }

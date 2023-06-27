@@ -9,7 +9,7 @@ package classes;
  * @author carre
  */
 public class NodoTree {
-    private Room element;
+     private Room element;
     private NodoTree  leftSon;
     private NodoTree  rightSon;
     
@@ -42,5 +42,4 @@ public class NodoTree {
     public void setRightSon(NodoTree rightSon) {
         this.rightSon = rightSon;
     }
-    
 }
