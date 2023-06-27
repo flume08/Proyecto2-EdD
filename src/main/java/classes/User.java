@@ -10,28 +10,26 @@ package classes;
  * @author David Mavares
  */
 public class User {
-    private String name;
+    private String fullName;
     private String dni;
     private String phone;
-    private String lastname;
     private String email;
     private String genre;
 
-    public User(String name, String dni, String phone, String lastname, String email, String genre) {
-        this.name = name;
+    public User(String fullName, String dni, String phone, String email, String genre) {
+        this.fullName = fullName;
         this.dni = dni;
         this.phone = phone;
-        this.lastname = lastname;
         this.email = email;
         this.genre = genre;
     }
 
-    public String getName() {
-        return name;
+    public String getfullName() {
+        return fullName;
     }
 
-    public void setName(String nombre) {
-        this.name = name;
+    public void setfullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public String getDni() {
@@ -50,14 +48,6 @@ public class User {
         this.phone = phone;
     }
 
-    public String getLastname() {
-        return lastname;
-    }
-
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -72,7 +62,5 @@ public class User {
 
     public void setGenre(String genre) {
         this.genre = genre;
-    }
-    
-    
+    }  
 }
