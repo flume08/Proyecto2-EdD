@@ -13,17 +13,14 @@ public class Room {
     private String id;
     private String type;
     private String level;
-    private String arrive;
-    private String leave;
     private boolean state;
     private Lista<User> history;
 
-    public Room(String id, String type, String level, String arrive, String leave) {
+    public Room(String id, String type, String level, boolean state) {
         this.id = id;
         this.type = type;
         this.level = level;
-        this.arrive = arrive;
-        this.leave = leave;
+        this.state = state;    
     }
 
     public String getId() {
@@ -48,24 +45,33 @@ public class Room {
 
     public void setLevel(String level) {
         this.level = level;
+    }    
+
+    /**
+     * @return the state
+     */
+    public boolean isState() {
+        return state;
     }
 
-    public String getArrive() {
-        return arrive;
+    /**
+     * @param state the state to set
+     */
+    public void setState(boolean state) {
+        this.state = state;
     }
 
-    public void setArrive(String arrive) {
-        this.arrive = arrive;
+    /**
+     * @return the history
+     */
+    public Lista<User> getHistory() {
+        return history;
     }
 
-    public String getLeave() {
-        return leave;
+    /**
+     * @param history the history to set
+     */
+    public void setHistory(Lista<User> history) {
+        this.history = history;
     }
-
-    public void setLeave(String leave) {
-        this.leave = leave;
-    }
-    
-    
-    
 }
