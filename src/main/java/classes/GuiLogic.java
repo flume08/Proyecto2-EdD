@@ -11,10 +11,10 @@ package classes;
 public class GuiLogic {
     public SearchBinnaryTree Rooms(Room[] rooms){
         SearchBinnaryTree arbolito = new SearchBinnaryTree();
-        arbolito.insert(null, rooms[150]);
+        arbolito.insert(null, rooms[149]);
         for(int i=0;i<150;i++){
-            arbolito.insert(arbolito.getRoot(), rooms[150-i]);
-            arbolito.insert(arbolito.getRoot(), rooms[150+i]);
+            arbolito.insert(arbolito.getRoot(), rooms[149-i]);
+            arbolito.insert(arbolito.getRoot(), rooms[149+i]);
         }
         return arbolito;
     }

@@ -31,7 +31,6 @@ public class FileManager {
         try {
             reader = new BufferedReader(new FileReader(RESERVASPATH));
             while (reader.readLine() != null) {
-                
                 line = reader.readLine();
                 String[] row = line.split(","); 
                 User user = initializeReservas(row);
@@ -55,7 +54,7 @@ public class FileManager {
     }  
     
     public User initializeReservas(String[] data) {
-        String id = data[0];
+        int id = Integer.parseInt(data[0].replace(".", ""));
         String name = data[1] + " " + data[2];
         String email = data[3];
         String gender = data[4];
@@ -63,7 +62,6 @@ public class FileManager {
         String phone = data[6];
         String arrival = data[7];
         String departure = data[8];
-        
         User user = new User(name, id, phone, email, gender, room, arrival, departure);
         System.out.println(user.getDni());
         return user;

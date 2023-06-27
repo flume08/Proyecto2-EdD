@@ -11,7 +11,7 @@ package classes;
  */
 public class User {
     private String name;
-    private String dni;
+    private int dni;
     private String phone;
     private String email;
     private String gender;
@@ -19,7 +19,7 @@ public class User {
     private String departure;
     private String room;
 
-    public User(String name, String dni, String phone, String email, String gender, String room, String arrival, String departure) {
+    public User(String name, int dni, String phone, String email, String gender, String room, String arrival, String departure) {
         this.name = name;
         this.dni = dni;
         this.phone = phone;
@@ -38,11 +38,11 @@ public class User {
         this.name = name;
     }
 
-    public String getDni() {
+    public int getDni() {
         return dni;
     }
 
-    public void setDni(String dni) {
+    public void setDni(int dni) {
         this.dni = dni;
     }
 
