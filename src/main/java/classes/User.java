@@ -10,15 +10,15 @@ package classes;
  * @author David Mavares
  */
 public class User {
-    private String nombre;
+    private String name;
     private String dni;
     private String phone;
     private String lastname;
     private String email;
     private String genre;
 
-    public User(String nombre, String dni, String phone, String lastname, String email, String genre) {
-        this.nombre = nombre;
+    public User(String name, String dni, String phone, String lastname, String email, String genre) {
+        this.name = name;
         this.dni = dni;
         this.phone = phone;
         this.lastname = lastname;
@@ -26,12 +26,12 @@ public class User {
         this.genre = genre;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String nombre) {
+        this.name = name;
     }
 
     public String getDni() {

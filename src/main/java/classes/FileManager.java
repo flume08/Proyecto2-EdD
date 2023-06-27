@@ -20,6 +20,11 @@ public class FileManager {
     String line = "";
     BufferedReader reader = null;
     PrintWriter writer = null;
+    
+    public static final String ESTADOPATH = "database\\Estado.csv";
+    public static final String HABITACIONESPATH = "database\\Habitaciones.csv";
+    public static final String HISTORICOPATH = "database\\Historico.csv";
+    public static final String RESERVASPATH = "database\\Reservas.csv";
       
     public void readCSV(String path) {   
         try {
@@ -45,5 +50,5 @@ public class FileManager {
             }
             
         }
-    }   
+    }  
 }
