@@ -10,7 +10,7 @@ package classes;
  * @author David Mavares
  */
 public class Room {
-    private String id;
+    private int id;
     private String type;
     private String level;
     private String arrive;
@@ -18,7 +18,7 @@ public class Room {
     private boolean state;
     private Lista<User> history;
 
-    public Room(String id, String type, String level, String arrive, String leave) {
+    public Room(int id, String type, String level, String arrive, String leave) {
         this.id = id;
         this.type = type;
         this.level = level;
@@ -26,11 +26,11 @@ public class Room {
         this.leave = leave;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

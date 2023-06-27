@@ -9,21 +9,21 @@ package classes;
  * @author carre
  */
 public class NodoTree {
-    private int element;
+    private Room element;
     private NodoTree  leftSon;
     private NodoTree  rightSon;
     
-    public NodoTree(int element){
+    public NodoTree(Room element){
         this.element = element;
         this.leftSon = null;
         this.rightSon = null;
     }
 
     public int getElement() {
-        return element;
+        return element.getId();
     }
 
-    public void setElement(int element) {
+    public void setElement(Room element) {
         this.element = element;
     }
 

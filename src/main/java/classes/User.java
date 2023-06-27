@@ -11,13 +11,14 @@ package classes;
  */
 public class User {
     private String name;
-    private String dni;
+    private int dni;
     private String phone;
     private String lastname;
     private String email;
     private String genre;
+    private int hab;
 
-    public User(String name, String dni, String phone, String lastname, String email, String genre) {
+    public User(String name, int dni, String phone, String lastname, String email, String genre) {
         this.name = name;
         this.dni = dni;
         this.phone = phone;
@@ -34,11 +35,11 @@ public class User {
         this.name = name;
     }
 
-    public String getDni() {
+    public int getDni() {
         return dni;
     }
 
-    public void setDni(String dni) {
+    public void setDni(int dni) {
         this.dni = dni;
     }
 
