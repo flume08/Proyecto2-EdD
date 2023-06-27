@@ -96,11 +96,10 @@ public class FileManager {
     }
     
     public Room initializeRooms(String[] data) {
-        String id = data[0];
+        int id = Integer.parseInt(data[0]);
         String type = data[1];
         String level = data[2];
         Room room = new Room(id, type, level, false);
         return room;
-    };
-            
+    };          
 }

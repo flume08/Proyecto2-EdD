@@ -10,24 +10,26 @@ package classes;
  * @author David Mavares
  */
 public class Room {
-    private String id;
+    private int id;
     private String type;
     private String level;
     private boolean state;
     private Lista<User> history;
 
-    public Room(String id, String type, String level, boolean state) {
+
+    public Room(int id, String type, String level, boolean state) {
+
         this.id = id;
         this.type = type;
         this.level = level;
         this.state = state;    
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

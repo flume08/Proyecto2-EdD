@@ -10,7 +10,7 @@ package classes;
  * @author David Mavares
  */
 public class User {
-    private String fullName;
+    private String name;
     private String dni;
     private String phone;
     private String email;
@@ -19,8 +19,8 @@ public class User {
     private String departure;
     private String room;
 
-    public User(String fullName, String dni, String phone, String email, String gender, String room, String arrival, String departure) {
-        this.fullName = fullName;
+    public User(String name, String dni, String phone, String email, String gender, String room, String arrival, String departure) {
+        this.name = name;
         this.dni = dni;
         this.phone = phone;
         this.email = email;
@@ -30,12 +30,12 @@ public class User {
         this.departure = departure;   
     }
 
-    public String getfullName() {
-        return fullName;
+    public String getName() {
+        return name;
     }
 
-    public void setfullName(String fullName) {
-        this.fullName = fullName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDni() {
@@ -66,7 +66,7 @@ public class User {
         return gender;
     }
 
-    public void setGender(String genre) {
+    public void setGender(String gender) {
         this.gender = gender;
     }  
 

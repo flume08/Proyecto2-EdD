@@ -7,7 +7,6 @@ package classes;
 /**
  *
  * @author carre
- * @param <T>
  */
 public class SearchBinnaryTree {
     private NodoTree root;
@@ -22,7 +21,7 @@ public class SearchBinnaryTree {
             return null;
         }
         else{
-            if((int)root.getElement() == element){
+            if(root.getElement() == element){
                 return root;
             }
             else{
@@ -36,12 +35,12 @@ public class SearchBinnaryTree {
         }
         return null;
     } 
-    public void insert(NodoTree root,int element){
+    public void insert(NodoTree root,Room element){
         NodoTree nodoNew = new NodoTree(element);
         if(root == null){
             root = nodoNew;
         }else{
-            if((int) root.getElement() >  element){
+            if(root.getElement() >  element.getId()){
                 insert(root.getLeftSon(),element);
             }
             else{
@@ -57,34 +56,5 @@ public class SearchBinnaryTree {
     } else {
         return searchMinimun(nodo.getLeftSon());
     }
-    }
-    public void delete(NodoTree root, int element){
-        NodoTree aux;
-        if(root == null){
-            System.out.println("El elemento no existe");
-        }
-        else{
-            if( element < root.getElement()){
-                delete(root.getLeftSon(), element);
-            }else{
-                if( element > root.getElement()){
-                    delete(root.getRightSon(), element);
-                }else{
-                    if(root.getLeftSon()==null){
-                        aux = root;
-                        root = root.getRightSon();
-                    }else{
-                        if(root.getRightSon()==null){
-                            aux = root;
-                            root = root.getLeftSon();
-                        }else{
-                            aux = searchMinimun(root.getRightSon());
-                            root.setElement(aux.getElement());
-                            delete(root.getRightSon(),root.getElement());
-                        }
-                    }
-                }
-            }
-        }
     }
 }
