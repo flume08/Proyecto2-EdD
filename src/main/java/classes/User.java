@@ -13,7 +13,6 @@ public class User {
     private String name;
     private int dni;
     private String phone;
-    private String lastname;
     private String email;
     private String genre;
     private int hab;
@@ -22,17 +21,16 @@ public class User {
         this.name = name;
         this.dni = dni;
         this.phone = phone;
-        this.lastname = lastname;
         this.email = email;
         this.genre = genre;
     }
 
-    public String getName() {
-        return name;
+    public String getfullName() {
+        return fullName;
     }
 
-    public void setName(String nombre) {
-        this.name = name;
+    public void setfullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public int getDni() {
@@ -51,14 +49,6 @@ public class User {
         this.phone = phone;
     }
 
-    public String getLastname() {
-        return lastname;
-    }
-
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -73,7 +63,5 @@ public class User {
 
     public void setGenre(String genre) {
         this.genre = genre;
-    }
-    
-    
+    }  
 }
