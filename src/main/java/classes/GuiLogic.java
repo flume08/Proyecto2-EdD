@@ -45,4 +45,16 @@ public class GuiLogic {
     merged.addAll(right.subList(rightIndex, right.getSize()));
     return merged;
   }
-}
+  public void bubbleSort(Lista<User> list){
+    int n = list.getSize();
+    User temp = null;
+    for (int i = 0; i < n-1; i++) {
+        for (int j = 0; j < n-i-1; j++) {
+            if (list.accessElement(j).getDni() > list.accessElement(j+1).getDni()) {
+                temp = list.accessElement(j);
+                list.swapElements(j, j+1);
+                list.accessElementNodo(j+1).setElement(temp);
+            }
+        }
+    }
+}}

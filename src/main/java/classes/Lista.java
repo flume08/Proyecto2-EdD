@@ -292,6 +292,11 @@ public class Lista<T> {
             this.addAtTheEndT(listR.accessElement(i));
         }
     }
+    public void swapElements(int x, int y){
+    Object temp = this.accessElementNodo(x);
+    this.accessElementNodo(x).setElement(this.accessElement(y));
+    this.accessElementNodo(y).setElement(temp);
+}
 }
 
 
