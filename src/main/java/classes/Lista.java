@@ -276,4 +276,23 @@ public class Lista<T> {
         }
         return false;
     }
-}   
+    public Lista<T> subList(int start, int end){
+        if((start < end) && (end<this.size) && (start>-1)){
+        Lista<T> sublist = new Lista<T>();
+        Nodo<T> pAux = new Nodo<>(null);
+        for(int i=start; i<=end; i++){
+                T x = this.accessElement(i);
+                sublist.addAtTheEndT(x);
+        }
+        return sublist;               
+        }
+    return null;}
+    public void addAll(Lista<T> listR){
+        for(int i= 0; i<listR.size; i++){
+            this.addAtTheEndT(listR.accessElement(i));
+        }
+    }
+}
+
+
+    

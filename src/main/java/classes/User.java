@@ -10,14 +10,15 @@ package classes;
  * @author David Mavares
  */
 public class User {
-    private String fullName;
-    private String dni;
+    private String name;
+    private int dni;
     private String phone;
     private String email;
     private String genre;
+    private int hab;
 
-    public User(String fullName, String dni, String phone, String email, String genre) {
-        this.fullName = fullName;
+    public User(String name, int dni, String phone, String lastname, String email, String genre) {
+        this.name = name;
         this.dni = dni;
         this.phone = phone;
         this.email = email;
@@ -32,11 +33,11 @@ public class User {
         this.fullName = fullName;
     }
 
-    public String getDni() {
+    public int getDni() {
         return dni;
     }
 
-    public void setDni(String dni) {
+    public void setDni(int dni) {
         this.dni = dni;
     }
 
