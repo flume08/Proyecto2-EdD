@@ -30,8 +30,7 @@ public class FileManager {
         Lista<User> reservationsUsers = new Lista<User>();
         try {
             reader = new BufferedReader(new FileReader(RESERVASPATH));
-            while (reader.readLine() != null) {
-                line = reader.readLine();
+            while ((line = reader.readLine()) != null ) {
                 String[] row = line.split(","); 
                 User user = initializeReservas(row);
                 reservationsUsers.addAtTheEndT(user);               

@@ -21,10 +21,10 @@ public class Project2 {
         Room[] rooms = fileManager.readRooms();   
         Lista<User> reservationsUsers = fileManager.readReservations();
         
-        System.out.println(reservationsUsers.getSize());
-        System.out.println(rooms[299].getId());
+        System.out.println(reservationsUsers.accessElement(0).getDni());
+        System.out.println(rooms[149].getId());
         
         Principal gui = new Principal();
-        gui.setVisible(true);
+        gui.setVisible(false);
     }
 }
