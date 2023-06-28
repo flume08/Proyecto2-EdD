@@ -30,11 +30,12 @@ public class FileManager {
         Lista<User> reservationsUsers = new Lista<User>();
         try {
             reader = new BufferedReader(new FileReader(RESERVASPATH));
-            while ((line = reader.readLine()) != null ) {
+
+            while ((line = reader.readLine()) != null ) {              
+                
+                line = reader.readLine();
                 String[] row = line.split(","); 
-                User user = initializeReservas(row);
-                reservationsUsers.addAtTheEndT(user);               
-                System.out.println("------------------------");
+                reservationsUsers.addAtTheEndT(initializeReservas(row));               
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -62,7 +63,6 @@ public class FileManager {
         String arrival = data[7];
         String departure = data[8];
         User user = new User(name, id, phone, email, gender, room, arrival, departure);
-        System.out.println(user.getDni());
         return user;
     }
     
@@ -98,5 +98,83 @@ public class FileManager {
         String level = data[2];
         Room room = new Room(id, type, level, false);
         return room;
-    };          
+    }
+    
+    
+    public User[] readCurrentState() {
+        int i = 0;
+        User[] currentState = new User[300];
+        try {
+            reader = new BufferedReader(new FileReader(ESTADOPATH));
+            while ((line = reader.readLine()) != null) {
+                
+                String[] row = line.split(","); 
+                currentState[i] = initializeCurrentState(row);
+                i++;
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            
+            try {
+                reader.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            
+        }
+        return currentState;
+    }
+    
+    public User initializeCurrentState(String[] data) {
+        String room = data[0];
+        String name = data[1] + " " + data[2];
+        String email = data[3];
+        String gender = data[4];
+        String phone = data[5];
+        String arrival = data[6];
+        
+        User user = new User(name, 0, phone, email, gender, room, arrival, null);
+        return user;
+    }
+    
+    
+    public Lista<User> readHistoric() {
+        Lista<User> roomsHistoric = new Lista<User>();
+        try {
+            reader = new BufferedReader(new FileReader(HISTORICOPATH));
+            while ((line = reader.readLine()) != null) {
+                
+                String[] row = line.split(","); 
+                roomsHistoric.addAtTheEndT(initializeHistoric(row));
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            
+            try {
+                reader.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            
+        }
+        return roomsHistoric;
+    }
+    
+    public User initializeHistoric(String[] data) {
+        int id = Integer.parseInt(data[0].replace(".", ""));
+        String name = data[1] + " " + data[2];
+        String email = data[3];
+        String gender = data[4];
+        String arrival = data[5];
+        String room = data[6];
+        
+        User user = new User(name, id, null, email, gender, room, arrival, null);
+        return user;
+    }
 }

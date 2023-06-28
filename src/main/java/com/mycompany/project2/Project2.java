@@ -20,14 +20,21 @@ public class Project2 {
     public static void main(String[] args) {
         FileManager fileManager = new FileManager();
         
-        Room[] rooms = fileManager.readRooms();   
+        User[] currentState = fileManager.readCurrentState();
+        Room[] rooms = fileManager.readRooms();
+        Lista<User> roomsHistoric = fileManager.readHistoric();
         Lista<User> reservationsUsers = fileManager.readReservations();
         
+
         System.out.println(reservationsUsers.accessElement(0).getDni());
         System.out.println(rooms[149].getId());
         GuiLogic logic = new GuiLogic();
         ABB arbolito = logic.Rooms1(rooms);
         arbolito.printInOrder();
+        System.out.println(currentState[10].getName());
+        System.out.println(roomsHistoric.accessElement(0).getEmail());
+
+        
         Principal gui = new Principal();
         gui.setVisible(false);
     }
