@@ -61,7 +61,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI Black", 0, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Welcome to the Hotel Admin Software");
-        background.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 840, 50));
+        background.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 840, 50));
 
         jPanel.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 590));
 
