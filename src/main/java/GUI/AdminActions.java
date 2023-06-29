@@ -32,12 +32,12 @@ public class AdminActions extends javax.swing.JFrame {
         historyButton = new javax.swing.JButton();
         checkOutButton = new javax.swing.JButton();
         backToGraphVisualizer = new javax.swing.JButton();
-        deleteUserInput = new javax.swing.JTextField();
-        addUserInput = new javax.swing.JTextField();
-        deleteRelationInput = new javax.swing.JTextField();
-        addRelationInput = new javax.swing.JTextField();
+        historyInput = new javax.swing.JTextField();
+        checkRInput = new javax.swing.JTextField();
+        checkOutInput = new javax.swing.JTextField();
+        searchRInput = new javax.swing.JTextField();
         checkInButton1 = new javax.swing.JButton();
-        deleteRelationInput1 = new javax.swing.JTextField();
+        checkInInput1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -140,69 +140,69 @@ public class AdminActions extends javax.swing.JFrame {
         });
         jPanel1.add(backToGraphVisualizer, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 430, 220, 60));
 
-        deleteUserInput.setBackground(new java.awt.Color(255, 255, 223));
-        deleteUserInput.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        deleteUserInput.setForeground(new java.awt.Color(153, 153, 153));
-        deleteUserInput.setText("Room number | Example 12");
-        deleteUserInput.addMouseListener(new java.awt.event.MouseAdapter() {
+        historyInput.setBackground(new java.awt.Color(255, 255, 223));
+        historyInput.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        historyInput.setForeground(new java.awt.Color(153, 153, 153));
+        historyInput.setText("Room number | Example 12");
+        historyInput.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                deleteUserInputMouseClicked(evt);
+                historyInputMouseClicked(evt);
             }
         });
-        deleteUserInput.addActionListener(new java.awt.event.ActionListener() {
+        historyInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deleteUserInputActionPerformed(evt);
+                historyInputActionPerformed(evt);
             }
         });
-        jPanel1.add(deleteUserInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 380, 30));
+        jPanel1.add(historyInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 380, 30));
 
-        addUserInput.setBackground(new java.awt.Color(255, 255, 223));
-        addUserInput.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        addUserInput.setForeground(new java.awt.Color(153, 153, 153));
-        addUserInput.setText("Last name, Name | Example Carreño, Luis");
-        addUserInput.addMouseListener(new java.awt.event.MouseAdapter() {
+        checkRInput.setBackground(new java.awt.Color(255, 255, 223));
+        checkRInput.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        checkRInput.setForeground(new java.awt.Color(153, 153, 153));
+        checkRInput.setText("Last name, Name | Example Carreño, Luis");
+        checkRInput.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                addUserInputMouseClicked(evt);
+                checkRInputMouseClicked(evt);
             }
         });
-        addUserInput.addActionListener(new java.awt.event.ActionListener() {
+        checkRInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addUserInputActionPerformed(evt);
+                checkRInputActionPerformed(evt);
             }
         });
-        jPanel1.add(addUserInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 380, 30));
+        jPanel1.add(checkRInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 380, 30));
 
-        deleteRelationInput.setBackground(new java.awt.Color(255, 255, 223));
-        deleteRelationInput.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        deleteRelationInput.setForeground(new java.awt.Color(153, 153, 153));
-        deleteRelationInput.setText("ID | Example 29100210");
-        deleteRelationInput.addMouseListener(new java.awt.event.MouseAdapter() {
+        checkOutInput.setBackground(new java.awt.Color(255, 255, 223));
+        checkOutInput.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        checkOutInput.setForeground(new java.awt.Color(153, 153, 153));
+        checkOutInput.setText("ID | Example 29100210");
+        checkOutInput.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                deleteRelationInputMouseClicked(evt);
+                checkOutInputMouseClicked(evt);
             }
         });
-        deleteRelationInput.addActionListener(new java.awt.event.ActionListener() {
+        checkOutInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deleteRelationInputActionPerformed(evt);
+                checkOutInputActionPerformed(evt);
             }
         });
-        jPanel1.add(deleteRelationInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, 380, 30));
+        jPanel1.add(checkOutInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, 380, 30));
 
-        addRelationInput.setBackground(new java.awt.Color(255, 255, 223));
-        addRelationInput.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        addRelationInput.setForeground(new java.awt.Color(153, 153, 153));
-        addRelationInput.setText("ID | Example 29100210");
-        addRelationInput.addMouseListener(new java.awt.event.MouseAdapter() {
+        searchRInput.setBackground(new java.awt.Color(255, 255, 223));
+        searchRInput.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        searchRInput.setForeground(new java.awt.Color(153, 153, 153));
+        searchRInput.setText("ID | Example 29100210");
+        searchRInput.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                addRelationInputMouseClicked(evt);
+                searchRInputMouseClicked(evt);
             }
         });
-        addRelationInput.addActionListener(new java.awt.event.ActionListener() {
+        searchRInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addRelationInputActionPerformed(evt);
+                searchRInputActionPerformed(evt);
             }
         });
-        jPanel1.add(addRelationInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 380, 30));
+        jPanel1.add(searchRInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 380, 30));
 
         checkInButton1.setBackground(new java.awt.Color(204, 204, 204));
         checkInButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -222,21 +222,21 @@ public class AdminActions extends javax.swing.JFrame {
         });
         jPanel1.add(checkInButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 230, 140, 50));
 
-        deleteRelationInput1.setBackground(new java.awt.Color(255, 255, 223));
-        deleteRelationInput1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        deleteRelationInput1.setForeground(new java.awt.Color(153, 153, 153));
-        deleteRelationInput1.setText("ID | Example 29100210");
-        deleteRelationInput1.addMouseListener(new java.awt.event.MouseAdapter() {
+        checkInInput1.setBackground(new java.awt.Color(255, 255, 223));
+        checkInInput1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        checkInInput1.setForeground(new java.awt.Color(153, 153, 153));
+        checkInInput1.setText("ID | Example 29100210");
+        checkInInput1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                deleteRelationInput1MouseClicked(evt);
+                checkInInput1MouseClicked(evt);
             }
         });
-        deleteRelationInput1.addActionListener(new java.awt.event.ActionListener() {
+        checkInInput1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deleteRelationInput1ActionPerformed(evt);
+                checkInInput1ActionPerformed(evt);
             }
         });
-        jPanel1.add(deleteRelationInput1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, 380, 30));
+        jPanel1.add(checkInInput1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, 380, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -302,41 +302,41 @@ public class AdminActions extends javax.swing.JFrame {
 
     }//GEN-LAST:event_backToGraphVisualizerActionPerformed
 
-    private void deleteUserInputMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteUserInputMouseClicked
+    private void historyInputMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_historyInputMouseClicked
         
-    }//GEN-LAST:event_deleteUserInputMouseClicked
+    }//GEN-LAST:event_historyInputMouseClicked
 
-    private void addUserInputMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addUserInputMouseClicked
+    private void checkRInputMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkRInputMouseClicked
         
-    }//GEN-LAST:event_addUserInputMouseClicked
+    }//GEN-LAST:event_checkRInputMouseClicked
 
-    private void addUserInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addUserInputActionPerformed
+    private void checkRInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkRInputActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_addUserInputActionPerformed
+    }//GEN-LAST:event_checkRInputActionPerformed
 
-    private void deleteRelationInputMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteRelationInputMouseClicked
+    private void checkOutInputMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkOutInputMouseClicked
        
-    }//GEN-LAST:event_deleteRelationInputMouseClicked
+    }//GEN-LAST:event_checkOutInputMouseClicked
 
-    private void deleteRelationInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteRelationInputActionPerformed
+    private void checkOutInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkOutInputActionPerformed
 
-    }//GEN-LAST:event_deleteRelationInputActionPerformed
+    }//GEN-LAST:event_checkOutInputActionPerformed
 
-    private void addRelationInputMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addRelationInputMouseClicked
+    private void searchRInputMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchRInputMouseClicked
        
-    }//GEN-LAST:event_addRelationInputMouseClicked
+    }//GEN-LAST:event_searchRInputMouseClicked
 
-    private void addRelationInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addRelationInputActionPerformed
+    private void searchRInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchRInputActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_addRelationInputActionPerformed
+    }//GEN-LAST:event_searchRInputActionPerformed
 
     private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseClicked
 
     }//GEN-LAST:event_jPanel1MouseClicked
 
-    private void deleteUserInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteUserInputActionPerformed
+    private void historyInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_historyInputActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_deleteUserInputActionPerformed
+    }//GEN-LAST:event_historyInputActionPerformed
 
     private void checkInButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkInButton1MouseClicked
         // TODO add your handling code here:
@@ -346,13 +346,13 @@ public class AdminActions extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_checkInButton1ActionPerformed
 
-    private void deleteRelationInput1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteRelationInput1MouseClicked
+    private void checkInInput1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkInInput1MouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_deleteRelationInput1MouseClicked
+    }//GEN-LAST:event_checkInInput1MouseClicked
 
-    private void deleteRelationInput1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteRelationInput1ActionPerformed
+    private void checkInInput1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkInInput1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_deleteRelationInput1ActionPerformed
+    }//GEN-LAST:event_checkInInput1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -390,17 +390,17 @@ public class AdminActions extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField addRelationInput;
-    private javax.swing.JTextField addUserInput;
     private javax.swing.JButton backToGraphVisualizer;
     private javax.swing.JButton checkInButton1;
+    private javax.swing.JTextField checkInInput1;
     private javax.swing.JButton checkOutButton;
+    private javax.swing.JTextField checkOutInput;
     private javax.swing.JButton checkRButton;
-    private javax.swing.JTextField deleteRelationInput;
-    private javax.swing.JTextField deleteRelationInput1;
-    private javax.swing.JTextField deleteUserInput;
+    private javax.swing.JTextField checkRInput;
     private javax.swing.JButton historyButton;
+    private javax.swing.JTextField historyInput;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton searchRButton;
+    private javax.swing.JTextField searchRInput;
     // End of variables declaration//GEN-END:variables
 }
