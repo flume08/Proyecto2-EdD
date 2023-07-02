@@ -19,32 +19,7 @@ public class GuiLogic {
         return arbolito;
     }
     
-    public Lista<User> sorted(Lista<User> list) {
-    if (list.getSize()< 2) {
-      return list;
-    }
-    int mid = list.getSize()/2;
-    return merged(
-        sorted(list.subList(0, mid)), 
-        sorted(list.subList(mid, list.getSize())));
-  }
 
-  public Lista<User> merged(Lista<User> left, Lista<User> right) {
-    int leftIndex = 0;
-    int rightIndex = 0;
-    Lista<User> merged = new Lista<>();
-
-    while (leftIndex < left.getSize() && rightIndex < right.getSize()) {
-      if (left.accessElement(leftIndex).getDni() < right.accessElement(rightIndex).getDni()) {
-        merged.addAtTheEndT(left.accessElement(leftIndex++));
-      } else {
-        merged.addAtTheEndT(right.accessElement(rightIndex++));
-      }
-    }
-    merged.addAll(left.subList(leftIndex, left.getSize()));
-    merged.addAll(right.subList(rightIndex, right.getSize()));
-    return merged;
-  }
   public void bubbleSort(Lista<User> list){
     int n = list.getSize();
     User temp = null;
