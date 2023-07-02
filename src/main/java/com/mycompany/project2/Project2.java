@@ -31,6 +31,7 @@ public class Project2 {
         Lista<User> reservationsUsers = fileManager.readReservations();
         GuiLogic logic = new GuiLogic();
         ABB arbolito = logic.Rooms1(rooms,roomsHistoric);
+        logic.bubbleSort(reservationsUsers);
         TablaHash<User> tabla=logic.initializeHash(currentState);
         System.out.println(tabla.table[871].accessElement(0).getName());
         Principal gui = new Principal(currentState, rooms, roomsHistoric, reservationsUsers, arbolito, tabla);
