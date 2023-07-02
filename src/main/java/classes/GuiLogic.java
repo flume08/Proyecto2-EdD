@@ -69,14 +69,14 @@ public class GuiLogic {
           tabla.addElementK(current[i], key);
       }
   return tabla;}
-  public boolean findUser(String name, TablaHash<User> tabla){
+  public User findUser(String name, TablaHash<User> tabla){
        int key = Math.abs(name.hashCode()) % 1000;
        for(int i = 0; i<tabla.table[key].getSize(); i++){
            if (tabla.table[key].accessElement(i).getName() == name){
-               return true;
+               return tabla.table[key].accessElement(i);
            }
        }
-       return false;
+       return null;
   }
     public User findUserU(Object id, TablaHash<User> tabla){
        int key = Math.abs(id.hashCode()) % 1000;
@@ -99,7 +99,7 @@ public class GuiLogic {
       reservaciones.deleteIntN(user);
       logic.addUser(tabla, user);
   }
-   }
+  }
   }
   public void checkOut(int id,TablaHash<User> tabla, ABB arbolito){
       GuiLogic logic = new GuiLogic();
@@ -107,5 +107,18 @@ public class GuiLogic {
       Room room = arbolito.contains(Integer.parseInt(user.getRoom())).getRoom();
       room.addHistory(user);
       room.setState(true);
+  }
+  public String[] function1(String name, TablaHash<User> tabla){
+      GuiLogic logic = new GuiLogic();
+      User user = logic.findUserU(name, tabla);
+      return user.showAttributes();
+  }
+  public String[] function2(int id, Lista<User> reservaciones){
+      GuiLogic logic = new GuiLogic();
+      User user = logic.binarySearch(reservaciones, id);
+      return user.showAttributes2();
+  }
+  public Lista<User> function3(int roomNumber, ABB arbolito){
+      return arbolito.contains(roomNumber).getRoom().getHistory(); 
   }
 }

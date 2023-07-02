@@ -111,4 +111,21 @@ public class User {
     public void setRoom(String room) {
         this.room = room;
     }
+    public String[] showAttributes(){
+        String[] user = new String[3];
+        user[0] = this.name;
+        user[1] = String.valueOf(dni);
+        user[2] = this.gender;
+        user[3] = this.phone;
+        return user;
+    }
+    public String[] showAttributes2(){
+        String[] user = new String[4];
+        user[0] = this.name;
+        user[1] = String.valueOf(dni);
+        user[2] = this.gender;
+        user[3] = this.phone;
+        user[4] = this.room;
+        return user;
+    }
 }
