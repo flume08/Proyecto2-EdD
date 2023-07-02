@@ -9,42 +9,20 @@ package classes;
  * @author carre
  */
 public class GuiLogic {
-    public ABB Rooms1(Room[] rooms){
+    public ABB Rooms1(Room[] rooms, Lista<User> historico){
+        for(int i=0;i<historico.getSize();i++){
+            rooms[Integer.parseInt(historico.accessElement(i).getRoom())-1].addHistory(historico.accessElement(i));
+        }
         ABB arbolito = new ABB();
         arbolito.insert(rooms[149]);
         for(int i=0;i<150;i++){
             arbolito.insert(rooms[149-i]);
             arbolito.insert(rooms[149+i]);
         }
+        arbolito.insert(rooms[299]);
         return arbolito;
     }
     
-    public Lista<User> sorted(Lista<User> list) {
-    if (list.getSize()< 2) {
-      return list;
-    }
-    int mid = list.getSize()/2;
-    return merged(
-        sorted(list.subList(0, mid)), 
-        sorted(list.subList(mid, list.getSize())));
-  }
-
-  public Lista<User> merged(Lista<User> left, Lista<User> right) {
-    int leftIndex = 0;
-    int rightIndex = 0;
-    Lista<User> merged = new Lista<>();
-
-    while (leftIndex < left.getSize() && rightIndex < right.getSize()) {
-      if (left.accessElement(leftIndex).getDni() < right.accessElement(rightIndex).getDni()) {
-        merged.addAtTheEndT(left.accessElement(leftIndex++));
-      } else {
-        merged.addAtTheEndT(right.accessElement(rightIndex++));
-      }
-    }
-    merged.addAll(left.subList(leftIndex, left.getSize()));
-    merged.addAll(right.subList(rightIndex, right.getSize()));
-    return merged;
-  }
   public void bubbleSort(Lista<User> list){
     int n = list.getSize();
     User temp = null;
