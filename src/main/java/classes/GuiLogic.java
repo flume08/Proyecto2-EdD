@@ -90,37 +90,16 @@ public class GuiLogic {
   public void checkIn(int id, Lista<User> reservaciones, Room[] rooms, TablaHash<User> tabla){
    GuiLogic logic = new GuiLogic();
    User user = logic.binarySearch(reservaciones, id);
-   if(user.getRoom() == "simple"){
-      for(int i = 0; i<100;i++){
-          if(rooms[i].isState()){
-              user.setRoom(String.valueOf(i));
-          }
-      }
-  }else{
-       if(user.getRoom() == "doble"){
-           for(int i = 100; i<224;i++){
-          if(rooms[i].isState()){
-              user.setRoom(String.valueOf(i));
-          }
-      }
-     }else{
-           if(user.getRoom() == "triple"){
-               for(int i = 226; i<265;i++){
-                if(rooms[i].isState()){
-              user.setRoom(String.valueOf(i));
+   for(int i = 0; i < rooms.length; i++){
+       if(user.getRoom() == rooms[i].getType()){
+           if(rooms[i].isState()){
+               user.setRoom(String.valueOf(i));
+               rooms[i].setState(false);
            }
-       }
-   }else{
-               for(int i = 265; i<300; i++){
-                    if(rooms[i].isState()){
-                        user.setRoom(String.valueOf(i));
-               }
-           }
-  }
-       }
-   }
       reservaciones.deleteIntN(user);
       logic.addUser(tabla, user);
+  }
+   }
   }
   public void checkOut(int id,TablaHash<User> tabla, ABB arbolito){
       GuiLogic logic = new GuiLogic();
