@@ -120,7 +120,7 @@ public class User {
         return user;
     }
     public String[] showAttributes2(){
-        String[] user = new String[4];
+        String[] user = new String[5];
         user[0] = this.name;
         user[1] = String.valueOf(dni);
         user[2] = this.gender;
