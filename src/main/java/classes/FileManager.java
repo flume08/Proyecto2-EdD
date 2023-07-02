@@ -33,7 +33,6 @@ public class FileManager {
 
             while ((line = reader.readLine()) != null ) {              
                 
-                line = reader.readLine();
                 String[] row = line.split(","); 
                 reservationsUsers.addAtTheEndT(initializeReservas(row));               
             }
