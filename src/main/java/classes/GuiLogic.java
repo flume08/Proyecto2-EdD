@@ -70,15 +70,16 @@ public class GuiLogic {
       }
       for(int x=0; x<current.length; x++){
           if(current[x] != null){
-          System.out.println(current[x]);
           int key = Math.abs(current[x].getName().hashCode()) % 1000;
           tabla.addElementK(current[x], key);
       }}
   return tabla;}
   public User findUser(String name, TablaHash<User> tabla){
        int key = Math.abs(name.hashCode()) % 1000;
+       System.out.println(key);
        for(int i = 0; i<tabla.table[key].getSize(); i++){
-           if (tabla.table[key].accessElement(i).getName() == name){
+           if (tabla.table[key].accessElement(i).getName().equals(name)){
+               User user = tabla.table[key].accessElement(i);
                return tabla.table[key].accessElement(i);
            }
        }
@@ -116,7 +117,7 @@ public class GuiLogic {
   }
   public String[] function1(String name, TablaHash<User> tabla){
 
-      User user = this.findUserU(name, tabla);
+      User user = this.findUser(name, tabla);
       return user.showAttributes();
   }
   public String[] function2(int id, Lista<User> reservaciones){

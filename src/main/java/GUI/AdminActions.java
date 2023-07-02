@@ -19,12 +19,12 @@ import classes.TablaHash;
  * @author carre
  */
 public class AdminActions extends javax.swing.JFrame {
-    User[] a;
-Room[] rooms;
-Lista<User> roomsHistoric;
-Lista<User> reservationsUsers;
-ABB arbolito;
-TablaHash tabla;
+    private User[] a;
+    private Room[] rooms;
+    private Lista<User> roomsHistoric;
+    private Lista<User> reservationsUsers;
+    private ABB arbolito;
+    private TablaHash tabla;
     
     GuiLogic guiLogic = new GuiLogic();
     String userInput;
@@ -36,8 +36,14 @@ TablaHash tabla;
     
     /**
      * Creates new form AdminActions
+     * @param a
+     * @param rooms
+     * @param roomsHistoric
+     * @param reservationsUsers
+     * @param arbolito
+     * @param tabla
      */
-    public AdminActions(User[] a, Room[] rooms, Lista<User> roomsHistoric,  Lista<User> reservationsUsers, ABB arbolito, TablaHash tabla) {
+    public AdminActions(User[] a, Room[] rooms, Lista<User> roomsHistoric,  Lista<User> reservationsUsers, ABB arbolito, TablaHash<User> tabla) {
         this.a=a;
         this.rooms=rooms;
         this.roomsHistoric=roomsHistoric;
@@ -285,7 +291,7 @@ TablaHash tabla;
             JOptionPane.showMessageDialog(null, "Check registration input must be (name space last name).");
         } else if (auxUserInput.matches("[a-zA-Z]+")) {
             //matches
-            guiLogic.function1(userInput, null);
+            guiLogic.function1(userInput, tabla);
         }
     }//GEN-LAST:event_checkRButtonActionPerformed
 
@@ -300,7 +306,7 @@ TablaHash tabla;
         } else {
             //matches
             numericInput = Integer.parseInt(userInput);
-            guiLogic.function2(numericInput, null);
+            guiLogic.function2(numericInput, reservationsUsers);
         }
     }//GEN-LAST:event_searchRButtonActionPerformed
 
@@ -311,7 +317,7 @@ TablaHash tabla;
         } else {
             //matches
             numericInput = Integer.parseInt(userInput);
-            guiLogic.function3(numericInput, null);
+            guiLogic.function3(numericInput, arbolito);
         }
     }//GEN-LAST:event_historyButtonMouseClicked
 
@@ -326,7 +332,7 @@ TablaHash tabla;
         } else {
             //matches
             numericInput = Integer.parseInt(userInput);
-            guiLogic.checkOut(numericInput, null, null);
+            guiLogic.checkOut(numericInput, tabla, arbolito);
         }
     }//GEN-LAST:event_checkOutButtonMouseClicked
 
@@ -389,7 +395,7 @@ TablaHash tabla;
         } else {
             //matches
             numericInput = Integer.parseInt(userInput);
-            guiLogic.checkIn(numericInput, null, null, null);
+            guiLogic.checkIn(numericInput, reservationsUsers, rooms, tabla);
         }
     }//GEN-LAST:event_checkInButton1MouseClicked
 

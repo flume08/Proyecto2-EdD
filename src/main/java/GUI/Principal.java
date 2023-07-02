@@ -16,12 +16,12 @@ import classes.TablaHash;
  * @author carre
  */
 public class Principal extends javax.swing.JFrame {
-User[] a;
-Room[] rooms;
-Lista<User> roomsHistoric;
-Lista<User> reservationsUsers;
-ABB arbolito;
-TablaHash tabla;
+    private User[] a;
+    private Room[] rooms;
+    private Lista<User> roomsHistoric;
+    private Lista<User> reservationsUsers;
+    private ABB arbolito;
+    private TablaHash tabla;
     /**
      * Creates new form Principal
      */
@@ -114,7 +114,7 @@ TablaHash tabla;
 
     private void startButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startButtonActionPerformed
     setVisible(false);
-        AdminActions admin = new AdminActions(a, rooms,roomsHistoric,  reservationsUsers, arbolito,tabla);
+        AdminActions admin = new AdminActions(a,rooms,roomsHistoric,  reservationsUsers, arbolito,tabla);
     admin.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_startButtonActionPerformed
 

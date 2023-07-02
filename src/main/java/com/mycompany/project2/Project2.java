@@ -24,13 +24,15 @@ public class Project2 {
         User[] currentState = fileManager.readCurrentState();
         Room[] rooms = fileManager.readRooms();
         for(int i = 0; i<currentState.length;i++){
+            if(currentState[i]!=null){
             rooms[Integer.parseInt(currentState[i].getRoom())-1].setState(false);
-        }
+        }}
         Lista<User> roomsHistoric = fileManager.readHistoric();
         Lista<User> reservationsUsers = fileManager.readReservations();
         GuiLogic logic = new GuiLogic();
         ABB arbolito = logic.Rooms1(rooms,roomsHistoric);
         TablaHash<User> tabla=logic.initializeHash(currentState);
+        System.out.println(tabla.table[871].accessElement(0).getName());
         Principal gui = new Principal(currentState, rooms, roomsHistoric, reservationsUsers, arbolito, tabla);
         gui.setVisible(true);
     }

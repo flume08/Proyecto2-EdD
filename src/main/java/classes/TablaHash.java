@@ -42,4 +42,9 @@ public class TablaHash<T> {
     public void addElementK(T element, int key){
         table[key].addAtTheEndT(element);
     }
+    public void print(){
+        for(int i = 0; i<this.capacity;i++){
+            table[i].print();
+        }
+    }
 }
