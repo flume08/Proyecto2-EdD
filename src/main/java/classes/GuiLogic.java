@@ -88,8 +88,8 @@ public class GuiLogic {
        return null;
   }
   public void checkIn(int id, Lista<User> reservaciones, Room[] rooms, TablaHash<User> tabla){
-   GuiLogic logic = new GuiLogic();
-   User user = logic.binarySearch(reservaciones, id);
+
+   User user = this.binarySearch(reservaciones, id);
    for(int i = 0; i < rooms.length; i++){
        if(user.getRoom() == rooms[i].getType()){
            if(rooms[i].isState()){
@@ -97,25 +97,25 @@ public class GuiLogic {
                rooms[i].setState(false);
            }
       reservaciones.deleteIntN(user);
-      logic.addUser(tabla, user);
+      this.addUser(tabla, user);
   }
   }
   }
   public void checkOut(int id,TablaHash<User> tabla, ABB arbolito){
-      GuiLogic logic = new GuiLogic();
-      User user = logic.findUserU(id, tabla);
+
+      User user = this.findUserU(id, tabla);
       Room room = arbolito.contains(Integer.parseInt(user.getRoom())).getRoom();
       room.addHistory(user);
       room.setState(true);
   }
   public String[] function1(String name, TablaHash<User> tabla){
-      GuiLogic logic = new GuiLogic();
-      User user = logic.findUserU(name, tabla);
+
+      User user = this.findUserU(name, tabla);
       return user.showAttributes();
   }
   public String[] function2(int id, Lista<User> reservaciones){
-      GuiLogic logic = new GuiLogic();
-      User user = logic.binarySearch(reservaciones, id);
+
+      User user = this.binarySearch(reservaciones, id);
       return user.showAttributes2();
   }
   public Lista<User> function3(int roomNumber, ABB arbolito){
