@@ -17,6 +17,12 @@ public class TablaHash<T> {
         this.capacity = capacity;
         this.table = new Lista[capacity];
     }
+    final void intit(int capacity){
+        for(int i= 0;i<capacity;i++){
+            Lista<T> temp = new Lista<>();
+            this.table[i] = temp;
+        }
+    }
     private int hashFunction(Object key) {
         int hashCode = key.hashCode();
         return Math.abs(hashCode) % table.length;
