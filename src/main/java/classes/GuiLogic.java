@@ -64,10 +64,16 @@ public class GuiLogic {
   }
   public TablaHash<User> initializeHash(User[] current){
       TablaHash<User> tabla = new TablaHash<>(1000);
-      for(int i=0; i<current.length; i++){
-          int key = Math.abs(current[i].getName().hashCode()) % 1000;
-          tabla.addElementK(current[i], key);
+      for(int i=0; i<1000; i++){
+          Lista<User> lista = new Lista<>();
+          tabla.table[i] = lista;
       }
+      for(int x=0; x<current.length; x++){
+          if(current[x] != null){
+          System.out.println(current[x]);
+          int key = Math.abs(current[x].getName().hashCode()) % 1000;
+          tabla.addElementK(current[x], key);
+      }}
   return tabla;}
   public User findUser(String name, TablaHash<User> tabla){
        int key = Math.abs(name.hashCode()) % 1000;

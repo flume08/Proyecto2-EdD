@@ -27,10 +27,6 @@ public class Project2 {
         Lista<User> reservationsUsers = fileManager.readReservations();
         GuiLogic logic = new GuiLogic();
         ABB arbolito = logic.Rooms1(rooms,roomsHistoric);
-        arbolito.printInOrder();
-        System.out.println(currentState[10].getName());
-        System.out.println(roomsHistoric.accessElement(0).getEmail());
-        
         TablaHash<User> tabla=logic.initializeHash(currentState);
         Principal gui = new Principal(currentState, rooms, roomsHistoric, reservationsUsers, arbolito, tabla);
         gui.setVisible(true);
