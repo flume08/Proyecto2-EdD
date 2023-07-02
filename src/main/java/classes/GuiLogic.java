@@ -108,9 +108,10 @@ public class GuiLogic {
   }
   }
   }
-  public void checkOut(String id,TablaHash<User> tabla, ABB arbolito){
 
-      User user = this.findUser(id, tabla);
+
+  public void checkOut(String name,TablaHash<User> tabla, ABB arbolito){
+      User user = this.findUser(name, tabla);
       Room room = arbolito.contains(Integer.parseInt(user.getRoom())).getRoom();
       room.addHistory(user);
       room.setState(true);
