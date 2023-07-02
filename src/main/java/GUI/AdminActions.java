@@ -4,12 +4,22 @@
  */
 package GUI;
 
+import java.awt.Color;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author carre
  */
 public class AdminActions extends javax.swing.JFrame {
-
+    
+    
+    String userInput;
+    String iDInputExample = "ID | Example: 29100210";
+    String registrationInputExample = "Last name, Name | Example: Luis Carreño";
+    String historyInputExample = "Room number | Example: 12";
+    
+    
     /**
      * Creates new form AdminActions
      */
@@ -107,7 +117,6 @@ public class AdminActions extends javax.swing.JFrame {
         checkOutButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         checkOutButton.setForeground(new java.awt.Color(0, 0, 0));
         checkOutButton.setText("Check Out");
-        checkOutButton.setActionCommand("Check Out");
         checkOutButton.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         checkOutButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         checkOutButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -143,7 +152,7 @@ public class AdminActions extends javax.swing.JFrame {
         historyInput.setBackground(new java.awt.Color(255, 255, 223));
         historyInput.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         historyInput.setForeground(new java.awt.Color(153, 153, 153));
-        historyInput.setText("Room number | Example 12");
+        historyInput.setText("Room number | Example: 12");
         historyInput.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 historyInputMouseClicked(evt);
@@ -159,7 +168,7 @@ public class AdminActions extends javax.swing.JFrame {
         checkRInput.setBackground(new java.awt.Color(255, 255, 223));
         checkRInput.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         checkRInput.setForeground(new java.awt.Color(153, 153, 153));
-        checkRInput.setText("Last name, Name | Example Carreño, Luis");
+        checkRInput.setText("Name, Last name | Example: Luis Carreño");
         checkRInput.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 checkRInputMouseClicked(evt);
@@ -175,7 +184,7 @@ public class AdminActions extends javax.swing.JFrame {
         checkOutInput.setBackground(new java.awt.Color(255, 255, 223));
         checkOutInput.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         checkOutInput.setForeground(new java.awt.Color(153, 153, 153));
-        checkOutInput.setText("ID | Example 29100210");
+        checkOutInput.setText("ID | Example: 29100210");
         checkOutInput.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 checkOutInputMouseClicked(evt);
@@ -191,7 +200,7 @@ public class AdminActions extends javax.swing.JFrame {
         searchRInput.setBackground(new java.awt.Color(255, 255, 223));
         searchRInput.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         searchRInput.setForeground(new java.awt.Color(153, 153, 153));
-        searchRInput.setText("ID | Example 29100210");
+        searchRInput.setText("ID | Example: 29100210");
         searchRInput.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 searchRInputMouseClicked(evt);
@@ -225,7 +234,7 @@ public class AdminActions extends javax.swing.JFrame {
         checkInInput1.setBackground(new java.awt.Color(255, 255, 223));
         checkInInput1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         checkInInput1.setForeground(new java.awt.Color(153, 153, 153));
-        checkInInput1.setText("ID | Example 29100210");
+        checkInInput1.setText("ID | Example: 29100210");
         checkInInput1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 checkInInput1MouseClicked(evt);
@@ -267,19 +276,35 @@ public class AdminActions extends javax.swing.JFrame {
     }//GEN-LAST:event_checkRButtonMouseClicked
 
     private void checkRButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkRButtonActionPerformed
-
+        userInput = checkRInput.getText();
+        String auxUserInput = userInput.replace(" ", "");
+        if (!userInput.contains(" ")) {
+            JOptionPane.showMessageDialog(null, "Check registration input must be (name space last name).");
+        } else if (auxUserInput.matches("[a-zA-Z]+")) {
+            //matches
+        }
     }//GEN-LAST:event_checkRButtonActionPerformed
 
     private void searchRButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchRButtonMouseClicked
-       
+
     }//GEN-LAST:event_searchRButtonMouseClicked
 
     private void searchRButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchRButtonActionPerformed
-        // TODO add your handling code here:
+        userInput = searchRInput.getText();
+        if (!userInput.matches("\\d+")) {
+            JOptionPane.showMessageDialog(null, "Search reservation must be only numbers");
+        } else {
+            //matches
+        }
     }//GEN-LAST:event_searchRButtonActionPerformed
 
     private void historyButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_historyButtonMouseClicked
-       
+        userInput = historyInput.getText();
+        if (!userInput.matches("\\d+")) {
+            JOptionPane.showMessageDialog(null, "Room history must be only numbers");
+        } else {
+            //matches
+        }
     }//GEN-LAST:event_historyButtonMouseClicked
 
     private void historyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_historyButtonActionPerformed
@@ -287,7 +312,12 @@ public class AdminActions extends javax.swing.JFrame {
     }//GEN-LAST:event_historyButtonActionPerformed
 
     private void checkOutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkOutButtonMouseClicked
-       
+        userInput = checkOutInput.getText();
+        if (!userInput.matches("\\d+")) {
+            JOptionPane.showMessageDialog(null, "Check out must be only numbers");
+        } else {
+            //matches
+        }
     }//GEN-LAST:event_checkOutButtonMouseClicked
 
     private void checkOutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkOutButtonActionPerformed
@@ -311,7 +341,10 @@ public class AdminActions extends javax.swing.JFrame {
     }//GEN-LAST:event_checkRInputMouseClicked
 
     private void checkRInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkRInputActionPerformed
-        // TODO add your handling code here:
+        if (registrationInputExample.equals(checkRInput.getText())) {
+            checkRInput.setText("");
+            checkRInput.setForeground(Color.BLACK);
+        }
     }//GEN-LAST:event_checkRInputActionPerformed
 
     private void checkOutInputMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkOutInputMouseClicked
@@ -319,7 +352,10 @@ public class AdminActions extends javax.swing.JFrame {
     }//GEN-LAST:event_checkOutInputMouseClicked
 
     private void checkOutInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkOutInputActionPerformed
-
+        if (iDInputExample.equals(checkOutInput.getText())) {
+            checkOutInput.setText("");
+            checkOutInput.setForeground(Color.BLACK);
+        }
     }//GEN-LAST:event_checkOutInputActionPerformed
 
     private void searchRInputMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchRInputMouseClicked
@@ -327,7 +363,10 @@ public class AdminActions extends javax.swing.JFrame {
     }//GEN-LAST:event_searchRInputMouseClicked
 
     private void searchRInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchRInputActionPerformed
-        // TODO add your handling code here:
+        if (iDInputExample.equals(searchRInput.getText())) {
+            searchRInput.setText("");
+            searchRInput.setForeground(Color.BLACK);
+        }
     }//GEN-LAST:event_searchRInputActionPerformed
 
     private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseClicked
@@ -335,11 +374,19 @@ public class AdminActions extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel1MouseClicked
 
     private void historyInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_historyInputActionPerformed
-        // TODO add your handling code here:
+        if (historyInputExample.equals(historyInput.getText())) {
+            historyInput.setText("");
+            historyInput.setForeground(Color.BLACK);
+        }
     }//GEN-LAST:event_historyInputActionPerformed
 
     private void checkInButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkInButton1MouseClicked
-        // TODO add your handling code here:
+        userInput = checkInInput1.getText();
+        if (!userInput.matches("\\d+")) {
+            JOptionPane.showMessageDialog(null, "Check in must be only numbers");
+        } else {
+            //matches
+        }
     }//GEN-LAST:event_checkInButton1MouseClicked
 
     private void checkInButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkInButton1ActionPerformed
@@ -351,7 +398,10 @@ public class AdminActions extends javax.swing.JFrame {
     }//GEN-LAST:event_checkInInput1MouseClicked
 
     private void checkInInput1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkInInput1ActionPerformed
-        // TODO add your handling code here:
+        if (iDInputExample.equals(checkInInput1.getText())) {
+            checkInInput1.setText("");
+            checkInInput1.setForeground(Color.BLACK);
+        }
     }//GEN-LAST:event_checkInInput1ActionPerformed
 
     /**
