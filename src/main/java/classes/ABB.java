@@ -30,18 +30,18 @@ public class ABB {
         return node;
     }
     
-    public boolean contains(Room key) {
+    public NodoTree contains(int key) {
         return containsHelper(root, key);
     }
     
-    private boolean containsHelper(NodoTree node, Room key) {
+    private NodoTree containsHelper(NodoTree node, int key) {
         if (node == null) {
-            return false;
+            return null;
         }
         
-        if (key.getId() == node.getElement()) {
-            return true;
-        } else if (key.getId() < node.getElement()) {
+        if (key == node.getElement()) {
+            return node;
+        } else if (key < node.getElement()) {
             return containsHelper(node.getLeftSon(), key);
         } else {
             return containsHelper(node.getRightSon(), key);

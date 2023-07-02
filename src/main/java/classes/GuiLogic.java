@@ -9,17 +9,20 @@ package classes;
  * @author carre
  */
 public class GuiLogic {
-    public ABB Rooms1(Room[] rooms){
+    public ABB Rooms1(Room[] rooms, Lista<User> historico){
+        for(int i=0;i<historico.getSize();i++){
+            rooms[Integer.parseInt(historico.accessElement(i).getRoom())-1].addHistory(historico.accessElement(i));
+        }
         ABB arbolito = new ABB();
         arbolito.insert(rooms[149]);
         for(int i=0;i<150;i++){
             arbolito.insert(rooms[149-i]);
             arbolito.insert(rooms[149+i]);
         }
+        arbolito.insert(rooms[299]);
         return arbolito;
     }
     
-
   public void bubbleSort(Lista<User> list){
     int n = list.getSize();
     User temp = null;

@@ -17,12 +17,13 @@ public class Room {
     private Lista<User> history;
 
 
-    public Room(int id, String type, String level, boolean state) {
+    public Room(int id, String type, String level, boolean state,Lista<User> history) {
 
         this.id = id;
         this.type = type;
         this.level = level;
-        this.state = state;    
+        this.state = state;
+        this.history = history;
     }
 
     public int getId() {
@@ -75,5 +76,15 @@ public class Room {
      */
     public void setHistory(Lista<User> history) {
         this.history = history;
+    }
+    public void addHistory(User user){
+        this.history.addAtTheEndT(user);
+    }
+    public Lista<String> showHistory(){
+        Lista<String> user = new Lista<>();
+        for(int i =0; i<this.history.getSize(); i++){
+           user.addAtTheEndT(history.accessElement(i).getName());
+        }
+        return user;
     }
 }
