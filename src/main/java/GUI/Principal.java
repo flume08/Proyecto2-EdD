@@ -65,6 +65,8 @@ public class Principal extends javax.swing.JFrame {
 
         cosmeticItem.setBackground(new java.awt.Color(0, 200, 0));
 
+        startButton.setBackground(new java.awt.Color(204, 204, 204));
+        startButton.setForeground(new java.awt.Color(0, 0, 0));
         startButton.setText("Start");
         startButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
