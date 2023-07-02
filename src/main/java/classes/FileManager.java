@@ -97,7 +97,7 @@ public class FileManager {
         String type = data[1];
         String level = data[2];
         Lista<User> historico = new Lista<>();
-        Room room = new Room(id, type, level, false,historico);
+        Room room = new Room(id, type, level, true,historico);
         return room;
     }
     
