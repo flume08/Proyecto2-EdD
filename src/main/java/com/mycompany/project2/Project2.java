@@ -24,12 +24,8 @@ public class Project2 {
         Room[] rooms = fileManager.readRooms();
         Lista<User> roomsHistoric = fileManager.readHistoric();
         Lista<User> reservationsUsers = fileManager.readReservations();
-        
-
-        System.out.println(reservationsUsers.accessElement(0).getDni());
-        System.out.println(rooms[149].getId());
         GuiLogic logic = new GuiLogic();
-        ABB arbolito = logic.Rooms1(rooms);
+        ABB arbolito = logic.Rooms1(rooms,roomsHistoric);
         arbolito.printInOrder();
         System.out.println(currentState[10].getName());
         System.out.println(roomsHistoric.accessElement(0).getEmail());

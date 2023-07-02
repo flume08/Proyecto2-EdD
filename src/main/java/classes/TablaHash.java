@@ -10,7 +10,7 @@ package classes;
  */
 public class TablaHash<T> {
     private int capacity;
-    private Lista<T>[] table;
+    public Lista<T>[] table;
     private int size;
     
     public TablaHash(int capacity){
@@ -32,5 +32,8 @@ public class TablaHash<T> {
     public boolean deleteElement(T element){
         int index = hashFunction(element);
         return table[index].deleteIntN(element);
+    }
+    public void addElementK(T element, int key){
+        table[key].addAtTheEndT(element);
     }
 }
