@@ -59,5 +59,42 @@ public class ABB {
             printInOrderHelper(node.getRightSon());
         }
     }
+    public void delete(Room key) {
+    root = deleteHelper(root, key);
+}
+
+    private NodoTree deleteHelper(NodoTree node, Room key) {
+    if (node == null) {
+        return null;
+    }
+
+    if (key.getId() < node.getElement()) {
+        node.setLeftSon(deleteHelper(node.getLeftSon(), key));
+    } else if (key.getId() > node.getElement()) {
+        node.setRightSon(deleteHelper(node.getRightSon(), key));
+    } else {
+        if (node.getLeftSon() == null && node.getRightSon() == null) {
+            node = null;
+        } else if (node.getLeftSon() == null) {
+            node = node.getRightSon();
+        } else if (node.getRightSon() == null) {
+            node = node.getLeftSon();
+        } else {
+            NodoTree temp = findSmallest(node.getRightSon());
+            node.setElement(temp.getRoom());
+            node.setRightSon(deleteHelper(node.getRightSon(), temp.getRoom()));
+        }
+    }
+
+    return node;
+}
+
+    private NodoTree findSmallest(NodoTree node) {
+    while (node.getLeftSon() != null) {
+        node = node.getLeftSon();
+    }
+
+    return node;
+}
 }
 

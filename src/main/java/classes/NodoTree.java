@@ -22,6 +22,9 @@ public class NodoTree {
     public int getElement() {
         return element.getId();
     }
+    public Room getRoom(){
+        return element;
+    }
 
     public void setElement(Room element) {
         this.element = element;
