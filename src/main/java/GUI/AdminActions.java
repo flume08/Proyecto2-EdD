@@ -193,7 +193,7 @@ public class AdminActions extends javax.swing.JFrame {
         checkOutInput.setBackground(new java.awt.Color(255, 255, 223));
         checkOutInput.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         checkOutInput.setForeground(new java.awt.Color(153, 153, 153));
-        checkOutInput.setText("ID | Example: 29100210");
+        checkOutInput.setText("Name, Last name | Example: Luis Carreño");
         checkOutInput.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 checkOutInputMouseClicked(evt);
@@ -327,12 +327,12 @@ public class AdminActions extends javax.swing.JFrame {
 
     private void checkOutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkOutButtonMouseClicked
         userInput = checkOutInput.getText();
-        if (!userInput.matches("\\d+")) {
-            JOptionPane.showMessageDialog(null, "Check out must be only numbers");
-        } else {
+        String auxUserInput = userInput.replace(" ", "");
+        if (!userInput.contains(" ")) {
+            JOptionPane.showMessageDialog(null, "Check Out input must be (name space last name).");
+        } else if (auxUserInput.matches("[a-zA-Z]+")) {
             //matches
-            numericInput = Integer.parseInt(userInput);
-            guiLogic.checkOut(numericInput, tabla, arbolito);
+            guiLogic.checkOut(userInput, tabla, arbolito);
         }
     }//GEN-LAST:event_checkOutButtonMouseClicked
 
