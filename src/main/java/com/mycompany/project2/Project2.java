@@ -32,6 +32,6 @@ public class Project2 {
 
         
         Principal gui = new Principal();
-        gui.setVisible(false);
+        gui.setVisible(true);
     }
 }

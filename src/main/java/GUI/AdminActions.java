@@ -4,6 +4,7 @@
  */
 package GUI;
 
+import classes.GuiLogic;
 import java.awt.Color;
 import javax.swing.JOptionPane;
 
@@ -13,10 +14,11 @@ import javax.swing.JOptionPane;
  */
 public class AdminActions extends javax.swing.JFrame {
     
-    
+    GuiLogic guiLogic = new GuiLogic();
     String userInput;
+    int numericInput;
     String iDInputExample = "ID | Example: 29100210";
-    String registrationInputExample = "Last name, Name | Example: Luis Carreño";
+    String registrationInputExample = "Name, Last name | Example: Luis Carreño";
     String historyInputExample = "Room number | Example: 12";
     
     
@@ -25,6 +27,8 @@ public class AdminActions extends javax.swing.JFrame {
      */
     public AdminActions() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
     }
 
     /**
@@ -41,7 +45,6 @@ public class AdminActions extends javax.swing.JFrame {
         searchRButton = new javax.swing.JButton();
         historyButton = new javax.swing.JButton();
         checkOutButton = new javax.swing.JButton();
-        backToGraphVisualizer = new javax.swing.JButton();
         historyInput = new javax.swing.JTextField();
         checkRInput = new javax.swing.JTextField();
         checkOutInput = new javax.swing.JTextField();
@@ -130,24 +133,6 @@ public class AdminActions extends javax.swing.JFrame {
             }
         });
         jPanel1.add(checkOutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 290, 140, 50));
-
-        backToGraphVisualizer.setBackground(new java.awt.Color(204, 204, 204));
-        backToGraphVisualizer.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        backToGraphVisualizer.setForeground(new java.awt.Color(0, 0, 0));
-        backToGraphVisualizer.setText("Visualize Graph");
-        backToGraphVisualizer.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        backToGraphVisualizer.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        backToGraphVisualizer.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                backToGraphVisualizerMouseClicked(evt);
-            }
-        });
-        backToGraphVisualizer.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backToGraphVisualizerActionPerformed(evt);
-            }
-        });
-        jPanel1.add(backToGraphVisualizer, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 430, 220, 60));
 
         historyInput.setBackground(new java.awt.Color(255, 255, 223));
         historyInput.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -282,6 +267,7 @@ public class AdminActions extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Check registration input must be (name space last name).");
         } else if (auxUserInput.matches("[a-zA-Z]+")) {
             //matches
+            guiLogic.function1(userInput, null);
         }
     }//GEN-LAST:event_checkRButtonActionPerformed
 
@@ -295,6 +281,8 @@ public class AdminActions extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Search reservation must be only numbers");
         } else {
             //matches
+            numericInput = Integer.parseInt(userInput);
+            guiLogic.function2(numericInput, null);
         }
     }//GEN-LAST:event_searchRButtonActionPerformed
 
@@ -304,6 +292,8 @@ public class AdminActions extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Room history must be only numbers");
         } else {
             //matches
+            numericInput = Integer.parseInt(userInput);
+            guiLogic.function3(numericInput, null);
         }
     }//GEN-LAST:event_historyButtonMouseClicked
 
@@ -317,6 +307,8 @@ public class AdminActions extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Check out must be only numbers");
         } else {
             //matches
+            numericInput = Integer.parseInt(userInput);
+            guiLogic.checkOut(numericInput, null, null);
         }
     }//GEN-LAST:event_checkOutButtonMouseClicked
 
@@ -324,49 +316,44 @@ public class AdminActions extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_checkOutButtonActionPerformed
 
-    private void backToGraphVisualizerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backToGraphVisualizerMouseClicked
-       
-    }//GEN-LAST:event_backToGraphVisualizerMouseClicked
-
-    private void backToGraphVisualizerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backToGraphVisualizerActionPerformed
-
-    }//GEN-LAST:event_backToGraphVisualizerActionPerformed
-
     private void historyInputMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_historyInputMouseClicked
-        
+        if (historyInputExample.equals(historyInput.getText())) {
+            historyInput.setText("");
+            historyInput.setForeground(Color.BLACK);
+        }
     }//GEN-LAST:event_historyInputMouseClicked
 
     private void checkRInputMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkRInputMouseClicked
-        
+        if (registrationInputExample.equals(checkRInput.getText())) {
+            checkRInput.setText("");
+            checkRInput.setForeground(Color.black);
+        }
     }//GEN-LAST:event_checkRInputMouseClicked
 
     private void checkRInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkRInputActionPerformed
-        if (registrationInputExample.equals(checkRInput.getText())) {
-            checkRInput.setText("");
-            checkRInput.setForeground(Color.BLACK);
-        }
+   
     }//GEN-LAST:event_checkRInputActionPerformed
 
     private void checkOutInputMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkOutInputMouseClicked
-       
-    }//GEN-LAST:event_checkOutInputMouseClicked
-
-    private void checkOutInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkOutInputActionPerformed
-        if (iDInputExample.equals(checkOutInput.getText())) {
+       if (iDInputExample.equals(checkOutInput.getText())) {
             checkOutInput.setText("");
             checkOutInput.setForeground(Color.BLACK);
         }
+    }//GEN-LAST:event_checkOutInputMouseClicked
+
+    private void checkOutInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkOutInputActionPerformed
+        
     }//GEN-LAST:event_checkOutInputActionPerformed
 
     private void searchRInputMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchRInputMouseClicked
-       
-    }//GEN-LAST:event_searchRInputMouseClicked
-
-    private void searchRInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchRInputActionPerformed
-        if (iDInputExample.equals(searchRInput.getText())) {
+       if (iDInputExample.equals(searchRInput.getText())) {
             searchRInput.setText("");
             searchRInput.setForeground(Color.BLACK);
         }
+    }//GEN-LAST:event_searchRInputMouseClicked
+
+    private void searchRInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchRInputActionPerformed
+        
     }//GEN-LAST:event_searchRInputActionPerformed
 
     private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseClicked
@@ -374,10 +361,7 @@ public class AdminActions extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel1MouseClicked
 
     private void historyInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_historyInputActionPerformed
-        if (historyInputExample.equals(historyInput.getText())) {
-            historyInput.setText("");
-            historyInput.setForeground(Color.BLACK);
-        }
+       
     }//GEN-LAST:event_historyInputActionPerformed
 
     private void checkInButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkInButton1MouseClicked
@@ -386,6 +370,8 @@ public class AdminActions extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Check in must be only numbers");
         } else {
             //matches
+            numericInput = Integer.parseInt(userInput);
+            guiLogic.checkIn(numericInput, null, null, null);
         }
     }//GEN-LAST:event_checkInButton1MouseClicked
 
@@ -394,14 +380,14 @@ public class AdminActions extends javax.swing.JFrame {
     }//GEN-LAST:event_checkInButton1ActionPerformed
 
     private void checkInInput1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkInInput1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_checkInInput1MouseClicked
-
-    private void checkInInput1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkInInput1ActionPerformed
         if (iDInputExample.equals(checkInInput1.getText())) {
             checkInInput1.setText("");
             checkInInput1.setForeground(Color.BLACK);
         }
+    }//GEN-LAST:event_checkInInput1MouseClicked
+
+    private void checkInInput1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkInInput1ActionPerformed
+
     }//GEN-LAST:event_checkInInput1ActionPerformed
 
     /**
@@ -440,7 +426,6 @@ public class AdminActions extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton backToGraphVisualizer;
     private javax.swing.JButton checkInButton1;
     private javax.swing.JTextField checkInInput1;
     private javax.swing.JButton checkOutButton;
