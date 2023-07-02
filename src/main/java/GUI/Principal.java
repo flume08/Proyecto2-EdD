@@ -32,6 +32,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         background = new javax.swing.JPanel();
         cosmeticItem = new javax.swing.JPanel();
+        startButton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -45,15 +46,28 @@ public class Principal extends javax.swing.JFrame {
 
         cosmeticItem.setBackground(new java.awt.Color(0, 200, 0));
 
+        startButton.setText("Start");
+        startButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                startButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout cosmeticItemLayout = new javax.swing.GroupLayout(cosmeticItem);
         cosmeticItem.setLayout(cosmeticItemLayout);
         cosmeticItemLayout.setHorizontalGroup(
             cosmeticItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 270, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cosmeticItemLayout.createSequentialGroup()
+                .addContainerGap(110, Short.MAX_VALUE)
+                .addComponent(startButton, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(87, 87, 87))
         );
         cosmeticItemLayout.setVerticalGroup(
             cosmeticItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 590, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cosmeticItemLayout.createSequentialGroup()
+                .addContainerGap(529, Short.MAX_VALUE)
+                .addComponent(startButton)
+                .addGap(36, 36, 36))
         );
 
         background.add(cosmeticItem, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 0, 270, 590));
@@ -78,6 +92,12 @@ public class Principal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void startButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startButtonActionPerformed
+    setVisible(false);
+        AdminActions admin = new AdminActions();
+    admin.setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_startButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -119,5 +139,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel;
+    private javax.swing.JButton startButton;
     // End of variables declaration//GEN-END:variables
 }
