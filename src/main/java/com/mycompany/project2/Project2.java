@@ -11,6 +11,7 @@ import classes.Lista;
 import classes.User;
 import classes.Room;
 import classes.GuiLogic;
+import classes.TablaHash;
 
 /**
  *
@@ -29,9 +30,9 @@ public class Project2 {
         arbolito.printInOrder();
         System.out.println(currentState[10].getName());
         System.out.println(roomsHistoric.accessElement(0).getEmail());
-
         
-        Principal gui = new Principal();
+        TablaHash<User> tabla=logic.initializeHash(currentState);
+        Principal gui = new Principal(currentState, rooms, roomsHistoric, reservationsUsers, arbolito, tabla);
         gui.setVisible(true);
     }
 }
