@@ -58,4 +58,20 @@ public class GuiLogic {
         // not present
         return false;
   }
+  public TablaHash<User> initializeHash(User[] current){
+      TablaHash<User> tabla = new TablaHash<>(1000);
+      for(int i=0; i<current.length; i++){
+          int key = Math.abs(current[i].getName().hashCode()) % 1000;
+          tabla.addElementK(current[i], key);
+      }
+  return tabla;}
+  public boolean findUser(String name, TablaHash<User> tabla){
+       int key = Math.abs(name.hashCode()) % 1000;
+       for(int i = 0; i<tabla.table[key].getSize(); i++){
+           if (tabla.table[key].accessElement(i).getName() == name){
+               return true;
+           }
+       }
+       return false;
+  }
 }
