@@ -23,6 +23,9 @@ public class Project2 {
         
         User[] currentState = fileManager.readCurrentState();
         Room[] rooms = fileManager.readRooms();
+        for(int i = 0; i<currentState.length;i++){
+            rooms[Integer.parseInt(currentState[i].getRoom())-1].setState(false);
+        }
         Lista<User> roomsHistoric = fileManager.readHistoric();
         Lista<User> reservationsUsers = fileManager.readReservations();
         GuiLogic logic = new GuiLogic();
