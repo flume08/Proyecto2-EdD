@@ -122,11 +122,14 @@ public class GuiLogic {
        }
        return null;
   }
-    public User findUserU(Object id, TablaHash<User> tabla){
-       int key = Math.abs(id.hashCode()) % 1000;
+  public User deleteUser(String name, TablaHash<User> tabla){
+       int key = Math.abs(name.hashCode()) % 1000;
+       System.out.println(key);
        for(int i = 0; i<tabla.table[key].getSize(); i++){
-           if (tabla.table[key].accessElement(i).getDni() == (int) id){
-               return tabla.table[key].accessElement(i);
+           if (tabla.table[key].accessElement(i).getName().equals(name)){
+               User user = tabla.table[key].accessElement(i);
+               tabla.table[key].deleteIntN(user);
+               return user;
            }
        }
        return null;
@@ -163,7 +166,7 @@ public class GuiLogic {
      * @param arbolito the ABB object representing the binary search tree
      */
   public boolean checkOut(String name,TablaHash<User> tabla, ABB arbolito){
-      User user = this.findUser(name, tabla);
+      User user = this.deleteUser(name, tabla);
       Room room = arbolito.contains(Integer.parseInt(user.getRoom())).getRoom();
       room.addHistory(user);
       room.setState(true);
