@@ -75,6 +75,8 @@ public class AdminActions extends javax.swing.JFrame {
         searchRInput = new javax.swing.JTextField();
         checkInButton1 = new javax.swing.JButton();
         checkInInput1 = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        mostrar = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -256,6 +258,12 @@ public class AdminActions extends javax.swing.JFrame {
         });
         jPanel1.add(checkInInput1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, 380, 30));
 
+        mostrar.setColumns(20);
+        mostrar.setRows(5);
+        jScrollPane1.setViewportView(mostrar);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 348, 490, 160));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -291,7 +299,20 @@ public class AdminActions extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Check registration input must be (name space last name).");
         } else if (auxUserInput.matches("[a-zA-Z]+")) {
             //matches
-            guiLogic.function1(userInput, tabla);
+            try{
+            String[] b= guiLogic.function1(userInput, tabla);
+            String resultado="";
+            String nombre= "Nombre: "+b[0];
+
+            String sexo= "Sexo: "+b[1];
+            String telefono= "Telefono: "+b[2];
+            String room ="Habitacion: "+b[3];
+            resultado+=nombre+"\n"+sexo+"\n"+telefono+"\n"+room;
+            JOptionPane.showMessageDialog(null, resultado);
+            }catch(Exception e){
+                JOptionPane.showMessageDialog(null, "El usuario ingresado no esta registrado");
+            }
+            
         }
     }//GEN-LAST:event_checkRButtonActionPerformed
 
@@ -306,23 +327,41 @@ public class AdminActions extends javax.swing.JFrame {
         } else {
             //matches
             numericInput = Integer.parseInt(userInput);
-            guiLogic.function2(numericInput, reservationsUsers);
+                try{
+            String[] b= guiLogic.function2(numericInput, reservationsUsers);
+            String resultado="";
+            String nombre= "Nombre: "+b[0];
+            String dni = "Dni: "+b[1];
+            String sexo= "Sexo: "+b[2];
+            String telefono= "Telefono: "+b[3];
+            String room ="Habitacion: "+b[4];
+            resultado+=nombre+"\n"+dni+"\n"+sexo+"\n"+telefono+"\n"+room;
+            JOptionPane.showMessageDialog(null, resultado);
+            }catch(Exception e){
+                JOptionPane.showMessageDialog(null,"El usuario no tiene reservacion");
+            }
+           
         }
     }//GEN-LAST:event_searchRButtonActionPerformed
 
     private void historyButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_historyButtonMouseClicked
-        userInput = historyInput.getText();
+        
+    }//GEN-LAST:event_historyButtonMouseClicked
+
+    private void historyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_historyButtonActionPerformed
+              userInput = historyInput.getText();
         if (!userInput.matches("\\d+")) {
             JOptionPane.showMessageDialog(null, "Room history must be only numbers");
         } else {
             //matches
             numericInput = Integer.parseInt(userInput);
-            guiLogic.function3(numericInput, arbolito);
-        }
-    }//GEN-LAST:event_historyButtonMouseClicked
-
-    private void historyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_historyButtonActionPerformed
-        // TODO add your handling code here:
+            Lista l= guiLogic.function3(numericInput, arbolito);
+            String resultado="";
+            for (int i=0; i<l.getSize(); i++){
+                resultado+=l.accessElement(i);
+            }
+            mostrar.setText(resultado);
+        }  // TODO add your handling code here:
     }//GEN-LAST:event_historyButtonActionPerformed
 
     private void checkOutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkOutButtonMouseClicked
@@ -429,6 +468,8 @@ public class AdminActions extends javax.swing.JFrame {
     private javax.swing.JButton historyButton;
     private javax.swing.JTextField historyInput;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea mostrar;
     private javax.swing.JButton searchRButton;
     private javax.swing.JTextField searchRInput;
     // End of variables declaration//GEN-END:variables

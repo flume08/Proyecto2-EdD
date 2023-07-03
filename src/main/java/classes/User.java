@@ -116,7 +116,7 @@ public class User {
         user[0] = this.name;
         user[1] = this.gender;
         user[2] = this.phone;
-        user[3] = String.valueOf(dni);
+        user[3] = String.valueOf(this.room);
         return user;
     }
     public String[] showAttributes2(){
