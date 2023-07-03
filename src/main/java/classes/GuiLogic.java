@@ -94,7 +94,7 @@ public class GuiLogic {
        }
        return null;
   }
-  public void checkIn(int id, Lista<User> reservaciones, Room[] rooms, TablaHash<User> tabla){
+  public int checkIn(int id, Lista<User> reservaciones, Room[] rooms, TablaHash<User> tabla){
 
    User user = this.binarySearch(reservaciones, id);
    for(int i = 0; i < rooms.length; i++){
@@ -102,11 +102,13 @@ public class GuiLogic {
            if(rooms[i].isState()){
                user.setRoom(String.valueOf(i));
                rooms[i].setState(false);
+               return i;
            }
       reservaciones.deleteIntN(user);
       this.addUser(tabla, user);
+      
   }
-  }
+  }return -1;
   }
 
 
