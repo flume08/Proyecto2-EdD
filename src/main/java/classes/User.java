@@ -6,10 +6,12 @@
 package classes;
 
 /**
- *
  * @author David Mavares
+ * The User class represents a user in the system.
+ * It stores information such as name, ID, contact details, and assigned room.
  */
 public class User {
+    
     private String name;
     private int dni;
     private String phone;
@@ -18,7 +20,18 @@ public class User {
     private String arrival;
     private String departure;
     private String room;
-
+/**
+     * Constructs a new User with the specified information.
+     *
+     * @param name The name of the user.
+     * @param dni The ID number of the user.
+     * @param phone The phone number of the user.
+     * @param email The email address of the user.
+     * @param gender The gender of the user.
+     * @param room The assigned room of the user.
+     * @param arrival The arrival date of the user.
+     * @param departure The departure date of the user.
+     */
     public User(String name, int dni, String phone, String email, String gender, String room, String arrival, String departure) {
         this.name = name;
         this.dni = dni;
@@ -29,43 +42,83 @@ public class User {
         this.arrival = arrival;
         this.departure = departure;   
     }
-
+/**
+     * Returns the name of the user.
+     *
+     * @return The name of the user.
+     */
     public String getName() {
         return name;
     }
-
+ /**
+     * Sets the name of the user.
+     *
+     * @param name The name to set.
+     */
     public void setName(String name) {
         this.name = name;
     }
-
+/**
+     * Returns the ID number of the user.
+     *
+     * @return The ID number of the user.
+     */
     public int getDni() {
         return dni;
     }
-
+ /**
+     * Sets the ID number of the user.
+     *
+     * @param dni The ID number to set.
+     */
     public void setDni(int dni) {
         this.dni = dni;
     }
-
+ /**
+     * Returns the phone number of the user.
+     *
+     * @return The phone number of the user.
+     */
     public String getPhone() {
         return phone;
     }
-
+ /**
+     * Sets the phone number of the user.
+     *
+     * @param phone The phone number to set.
+     */
     public void setPhone(String phone) {
         this.phone = phone;
     }
-
+/**
+     * Returns the email address of the user.
+     *
+     * @return The email address of the user.
+     */
     public String getEmail() {
         return email;
     }
-
+/**
+     * Sets the email address of the user.
+     *
+     * @param email The email address to set.
+     */
     public void setEmail(String email) {
         this.email = email;
     }
-
+/**
+     * Returns the gender of the user.
+     *
+     * @return The gender of the user.
+     */
     public String getGender() {
         return gender;
     }
-
+ /**
+     * Sets the gender of the user.
+     *
+     * @param gender The gender to set.
+     */
     public void setGender(String gender) {
         this.gender = gender;
     }  
