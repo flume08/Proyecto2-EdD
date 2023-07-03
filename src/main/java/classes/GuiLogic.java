@@ -162,11 +162,12 @@ public class GuiLogic {
      * @param tabla  the TablaHash object representing the hash table
      * @param arbolito the ABB object representing the binary search tree
      */
-  public void checkOut(String name,TablaHash<User> tabla, ABB arbolito){
+  public boolean checkOut(String name,TablaHash<User> tabla, ABB arbolito){
       User user = this.findUser(name, tabla);
       Room room = arbolito.contains(Integer.parseInt(user.getRoom())).getRoom();
       room.addHistory(user);
       room.setState(true);
+      return true;
   }
   /**
      * Retrieves and returns specific attributes of a user with the specified name from the hash table.
