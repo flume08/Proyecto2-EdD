@@ -308,9 +308,9 @@ public class AdminActions extends javax.swing.JFrame {
             String telefono= "Telefono: "+b[2];
             String room ="Habitacion: "+b[3];
             resultado+=nombre+"\n"+sexo+"\n"+telefono+"\n"+room;
-            JOptionPane.showMessageDialog(null, resultado);
+            mostrar.setText(resultado);
             }catch(Exception e){
-                JOptionPane.showMessageDialog(null, "El usuario ingresado no esta registrado");
+                mostrar.setText("El usuario ingresado no esta registrado");
             }
             
         }
@@ -336,9 +336,9 @@ public class AdminActions extends javax.swing.JFrame {
             String telefono= "Telefono: "+b[3];
             String room ="Habitacion: "+b[4];
             resultado+=nombre+"\n"+dni+"\n"+sexo+"\n"+telefono+"\n"+room;
-            JOptionPane.showMessageDialog(null, resultado);
+            mostrar.setText(resultado);
             }catch(Exception e){
-                JOptionPane.showMessageDialog(null,"El usuario no tiene reservacion");
+                mostrar.setText("El usuario no tiene reservacion");
             }
            
         }
@@ -354,29 +354,40 @@ public class AdminActions extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Room history must be only numbers");
         } else {
             //matches
+            try{
             numericInput = Integer.parseInt(userInput);
-            Lista l= guiLogic.function3(numericInput, arbolito);
+            Lista<User> l= guiLogic.function3(numericInput, arbolito);
             String resultado="";
             for (int i=0; i<l.getSize(); i++){
-                resultado+=l.accessElement(i);
+                
+                resultado+=l.accessElement(i).getName()+"\n";
             }
             mostrar.setText(resultado);
-        }  // TODO add your handling code here:
+        }catch(Exception e)  {
+mostrar.setText("Habitacion invalida");// TODO add your handling code here:
     }//GEN-LAST:event_historyButtonActionPerformed
-
+        }        
+    }
     private void checkOutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkOutButtonMouseClicked
+        
+    }//GEN-LAST:event_checkOutButtonMouseClicked
+
+    private void checkOutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkOutButtonActionPerformed
         userInput = checkOutInput.getText();
         String auxUserInput = userInput.replace(" ", "");
         if (!userInput.contains(" ")) {
             JOptionPane.showMessageDialog(null, "Check Out input must be (name space last name).");
         } else if (auxUserInput.matches("[a-zA-Z]+")) {
             //matches
-            guiLogic.checkOut(userInput, tabla, arbolito);
-        }
-    }//GEN-LAST:event_checkOutButtonMouseClicked
-
-    private void checkOutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkOutButtonActionPerformed
-        // TODO add your handling code here:
+            try{
+            boolean bool= guiLogic.checkOut(userInput, tabla, arbolito);
+            if (bool){
+                mostrar.setText("CheckOut realizado con exito");
+            }
+            }catch(Exception e){
+                mostrar.setText("Usuario no encontrado");
+            }
+        }// TODO add your handling code here:
     }//GEN-LAST:event_checkOutButtonActionPerformed
 
     private void historyInputMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_historyInputMouseClicked
@@ -428,18 +439,27 @@ public class AdminActions extends javax.swing.JFrame {
     }//GEN-LAST:event_historyInputActionPerformed
 
     private void checkInButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkInButton1MouseClicked
-        userInput = checkInInput1.getText();
+        
+    }//GEN-LAST:event_checkInButton1MouseClicked
+
+    private void checkInButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkInButton1ActionPerformed
+       userInput = checkInInput1.getText();
         if (!userInput.matches("\\d+")) {
             JOptionPane.showMessageDialog(null, "Check in must be only numbers");
         } else {
             //matches
             numericInput = Integer.parseInt(userInput);
-            guiLogic.checkIn(numericInput, reservationsUsers, rooms, tabla);
-        }
-    }//GEN-LAST:event_checkInButton1MouseClicked
-
-    private void checkInButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkInButton1ActionPerformed
-        // TODO add your handling code here:
+            try{
+            int num=guiLogic.checkIn(numericInput, reservationsUsers, rooms, tabla);
+            if(num!=-1){
+            mostrar.setText("Chequeo hecho exitosamente, se le ha asignado la habitacion: "+num);
+            }else{
+                mostrar.setText("el Usuario no posee reservacion");
+            }
+            }catch(Exception e){
+                mostrar.setText("Usuario no registrado");
+            }
+        } // TODO add your handling code here:
     }//GEN-LAST:event_checkInButton1ActionPerformed
 
     private void checkInInput1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkInInput1MouseClicked
